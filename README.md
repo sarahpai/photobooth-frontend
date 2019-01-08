@@ -32,7 +32,10 @@ SnapOn is a fun and interactive photo booth app.
 ---
 
 ## Wire-Frames
-
+[Model Association](https://www.draw.io/#G16RyUeySFma0EeZKmAUXsKsVfCnvpitQw)
+[Component Structure]
+()
+[Design Prototype](https://xd.adobe.com/view/be596e97-eed8-49d8-7052-5f7f6c8bc1fa-c868/)
 
 ## Project Schedule
 * MVP Features
@@ -53,6 +56,8 @@ SnapOn is a fun and interactive photo booth app.
 * Stretch goals
 	 <input type="checkbox"/>Editable text for the template
 	 <input type="checkbox"/>When logged in, user should be able to see their photo collection
+	 <input type="checkbox"/>Use Twillo API to send photo to text
+	 
 
 ---
 
