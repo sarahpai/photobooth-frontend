@@ -22,7 +22,7 @@ SnapOn is a fun and interactive photo booth app.
 	* Redux (maybe?)
 		* React-Redux
 	* WebRTC
-	* WebGL
+	* WebGL (Javascript API)
 	* JWTAuth
 
 * Backend
@@ -33,8 +33,7 @@ SnapOn is a fun and interactive photo booth app.
 
 ## Wire-Frames
 [Model Association](https://www.draw.io/#G16RyUeySFma0EeZKmAUXsKsVfCnvpitQw)
-[Component Structure]
-()
+
 [Design Prototype](https://xd.adobe.com/view/be596e97-eed8-49d8-7052-5f7f6c8bc1fa-c868/)
 
 ## Project Schedule
