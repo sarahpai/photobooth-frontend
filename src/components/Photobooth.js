@@ -1,20 +1,21 @@
 import React from 'react'
-// import { resolve } from 'q';
 import '../css/style.css'
-import TakenPhoto from '../components/TakenPhoto'
+// import TakenPhoto from '../components/TakenPhoto'
+import FrameTemplate from '../components/FrameTemplate'
 
 let video
 let canvas
 let photos
-let photoFilter
-let clearButton
-let gifCanvas
+// let photoFilter
+// let clearButton
+
 class Photobooth extends React.Component {
 	
 	state = {
 		width: 500,
-		height: 0,
-		filter: 'none'
+		// height: 0,
+		filter: 'none',
+		template: ""
 	}
 	
 	componentDidMount() {
@@ -33,7 +34,7 @@ class Photobooth extends React.Component {
 
 	//FILTER
 	filterPhoto=(e)=> {
-		photoFilter = document.getElementById('photo-filter')
+		let photoFilter = document.getElementById('photo-filter')
 		e.preventDefault();
 		console.log("inside", e.target.value);
 		this.setState({ filter: e.target.value },() => {console.log(video.style.filter = this.state.filter, this.state.filter)} ) 
@@ -75,11 +76,20 @@ class Photobooth extends React.Component {
 	
 	//clear event 
 	clearImage = (e) => {
-		clearButton = document.getElementById('clear-button')
+		// let clearButton = document.getElementById('clear-button')
 		photos.innerHTML = "";
 		this.setState({ filter: 'none' },()=> (video.style.filter = this.state.filter))
 	}
 
+	handleSelection = (templateName) => {
+		// let frameName = templateName.currentTarget.alt
+		this.setState({
+			template: templateName
+		},()=>console.log(this.state)
+		)
+	}
+
+	
 	render() {
 		return (
 			<>	
@@ -107,6 +117,7 @@ class Photobooth extends React.Component {
 		  <div className='gif-container'>
 			<div id='bitmap'></div>
 				</div>
+				<FrameTemplate template={this.state.template} handleSelection={this.handleSelection}/>
 			</>
 		)
 	}

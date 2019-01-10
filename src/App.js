@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Photobooth from './components/Photobooth'
 import Homepage from './containers/Homepage'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 class App extends Component {
   render() {

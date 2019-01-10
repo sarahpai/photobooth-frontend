@@ -1,5 +1,5 @@
 import React from 'react'
-import Photobooth from '../components/Photobooth'
+// import Photobooth from '../components/Photobooth'
 import { Link } from 'react-router-dom';
 
 const Homepage = () => {
