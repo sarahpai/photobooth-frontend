@@ -38,7 +38,8 @@ SnapOn is a fun and interactive photo booth app.
 
 ## Project Schedule
 * MVP Features
-	 <input type="checkbox"/>Webcam (1/9)
+	 <input type="checkbox"/>Webcam (1/8)
+	 <input type="checkbox"/>Create backend (1/9)
 	 <input type="checkbox"/>Capturing Gif (1/10)
 	 <input type="checkbox"/>Photo templates with mission statements (1/11)
 	 <input type="checkbox"/>Show taken photos with selected "mission themed template" (1/17)
@@ -56,6 +57,10 @@ SnapOn is a fun and interactive photo booth app.
 	 <input type="checkbox"/>Editable text for the template
 	 <input type="checkbox"/>When logged in, user should be able to see their photo collection
 	 <input type="checkbox"/>Use Twillo API to send photo to text
+	 <input type="checkbox"/>User's can like the photos of everyone's
+	 <input type="checkbox"/>Gallery of best taken photo
+	 
+
 	 
 
 ---

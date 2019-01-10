@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
 import './App.css';
-import Photobooth from './Photobooth'
+import Photobooth from './components/Photobooth'
+import Homepage from './containers/Homepage'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className='navbar'>
-          <h1>Photobooth App</h1>
-        </div>
-        <Photobooth />
-      </div>
+     <>
+        <Router>
+          <div>
+          <Route exact path='/photobooth' component={Photobooth}/>
+          <Route exact path='/homepage' component={Homepage}/>
+          </div>
+        </Router>
+       
+   </>
     );
   }
 }

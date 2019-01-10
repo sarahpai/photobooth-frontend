@@ -1,20 +1,20 @@
 import React from 'react'
 // import { resolve } from 'q';
-import './css/style.css'
+import '../css/style.css'
+import TakenPhoto from '../components/TakenPhoto'
 
 let video
 let canvas
 let photos
 let photoFilter
 let clearButton
-
+let gifCanvas
 class Photobooth extends React.Component {
 	
 	state = {
 		width: 500,
 		height: 0,
 		filter: 'none'
-		// streaming: false	
 	}
 	
 	componentDidMount() {
@@ -42,28 +42,33 @@ class Photobooth extends React.Component {
 	
 	takePictureButton=()=> {
 		canvas = document.getElementById('canvas')
-		canvas.width = 640;
-		canvas.height = 480;
+		canvas.width = 320;
+		canvas.height = 240;
 		let context = canvas.getContext('2d')
 		console.log(context);
-		// appending captured contex to page
+
+		// appending captured context to page
 		context.drawImage(video, 0, 0, canvas.width, canvas.height);
 		
 		//create image from canvas
 		const imgUrl = canvas.toDataURL('image/png', 1);
-
+		
 		console.log(imgUrl); // base64 image url
 
+		//create gif gif canvas
+		
+		
 		//create image element
 		const img = document.createElement('img');
-
+		
 		//set img src 
 		img.setAttribute('src', imgUrl)
-
+		
 		//set image filter
 		console.log(this.state);
 		img.style.filter = this.state.filter
 		
+		//append photos to page
 		photos = document.getElementById('photos')
 		photos.appendChild(img)
 	}
@@ -98,6 +103,9 @@ class Photobooth extends React.Component {
 		
 		  <div className='bottom-container'>
 			<div id='photos'></div>
+				</div>
+		  <div className='gif-container'>
+			<div id='bitmap'></div>
 				</div>
 			</>
 		)
