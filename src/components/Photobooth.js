@@ -1,7 +1,7 @@
 import React from 'react'
 import '../css/style.css'
-// import TakenPhoto from '../components/TakenPhoto'
 import FrameTemplate from '../components/FrameTemplate'
+import { connect } from 'react-redux';
 
 let video
 let canvas
@@ -13,7 +13,6 @@ class Photobooth extends React.Component {
 	
 	state = {
 		width: 500,
-		// height: 0,
 		filter: 'none',
 		template: ""
 	}
@@ -55,9 +54,6 @@ class Photobooth extends React.Component {
 		const imgUrl = canvas.toDataURL('image/png', 1);
 		
 		console.log(imgUrl); // base64 image url
-
-		//create gif gif canvas
-		
 		
 		//create image element
 		const img = document.createElement('img');
@@ -72,6 +68,7 @@ class Photobooth extends React.Component {
 		//append photos to page
 		photos = document.getElementById('photos')
 		photos.appendChild(img)
+
 	}
 	
 	//clear event 
@@ -80,6 +77,7 @@ class Photobooth extends React.Component {
 		photos.innerHTML = "";
 		this.setState({ filter: 'none' },()=> (video.style.filter = this.state.filter))
 	}
+
 
 	handleSelection = (templateName) => {
 		// let frameName = templateName.currentTarget.alt
@@ -121,4 +119,18 @@ class Photobooth extends React.Component {
 			</>
 		)
 	}
-} export default Photobooth;
+}
+
+function mapStateToProps(state) {
+	return {
+		template: state.template
+	}
+}
+
+function mapDispatchToProps(dispatch) {
+	return{
+		
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Photobooth);
