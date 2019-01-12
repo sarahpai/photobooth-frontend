@@ -1,7 +1,7 @@
-import { SET_CURRENT_USER, AUTHENTICATING_USER, AUTHENTICATED_USER, FAILED_LOGIN, RESET } from "./types";
+import { SET_CURRENT_USER, AUTHENTICATING_USER, AUTHENTICATED_USER, FAILED_LOGIN, LOGOUT_USER } from "./types";
 
 const initialState = {
-	username: "",
+	username: null,
 	loggedIn: false,
 	authenticatingUser: false,
 	failedLogin: false,
@@ -12,7 +12,7 @@ const userReducer = (state = initialState, action) => {
 	console.log('%c userReducer', 'color: blue', state, action);
 	switch (action.type) {
 		case SET_CURRENT_USER:
-			return { ...state, username: action.payload, loggedIn: true, authenticatingUser:false }
+			return { ...state, user: action.payload, loggedIn: true, authenticatingUser:false }
 		case AUTHENTICATING_USER: //tells the app we're fetching
 			return { ...state, authenticatingUser: true }
 		case AUTHENTICATED_USER:
@@ -23,8 +23,8 @@ const userReducer = (state = initialState, action) => {
 				error: action.payload,
 				authenticatingUser: false
 			}
-		case RESET:
-			return initialState
+		case LOGOUT_USER:
+			return { ...state, initialState }
 		default:
 			return state
 	}

@@ -18,15 +18,15 @@ class LoginForm extends Component {
 		this.setState({[event.target.name]: event.target.value})
 	}
 
-	handleLoginSubmit = (event) => {
-		event.preventDefault();
+  handleLoginSubmit = (event) => {
+    //this.props.loginUser is coming from action creator & used in connect
 		this.props.loginUser(this.state.username, this.state.password);
 		this.setState({username:"", password: ""})
 	}
 
 	render() {
 	return this.props.loggedIn ? (
-		<Redirect to="/profile" />
+		<Redirect to="/homepage" />
 		) : (
 		<Segment>
 			<Form
@@ -61,15 +61,13 @@ class LoginForm extends Component {
 	}
 } 
 
-const mapStateToProps = (state) => {
-  console.log("inside login", state)
-  return{
-      authenticatingUser: state.user.authenticatingUser,
-      failedLogin: state.user.failedLogin,
-      isLoggedIn: state.user.isLoggedIn,
-      error: state.user.error
-  }
-}
+const mapStateToProps = ({ userReducer: { authenticatingUser, failedLogin, loggedIn, error } }) => ({
+  authenticatingUser,
+  failedLogin,
+  error,
+  loggedIn
+})
 
 
 export default withRouter(connect(mapStateToProps, { loginUser })(LoginForm))
+//loginUser is the function that we are taking from action creator
