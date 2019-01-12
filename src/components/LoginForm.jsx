@@ -71,17 +71,5 @@ const mapStateToProps = (state) => {
   }
 }
 
-// const mapStateToProps = ({ usersReducer: { AUTHENTICATING_USER, FAILED_LOGIN, error, loggedIn } }) => ({
-// 	AUTHENTICATING_USER,
-// 	FAILED_LOGIN,
-// 	error,
-// 	loggedIn
-//   })
-
-// const mapDispatchToProps=(dispatch) => {
-// 	return {
-// 		loginUser: (username, password)=>dispatch(loginUser(username,password)) ///username & password is the payload data, addUserAction is the action object
-// 	}
-// }
 
 export default withRouter(connect(mapStateToProps, { loginUser })(LoginForm))

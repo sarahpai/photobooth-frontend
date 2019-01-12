@@ -1,11 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router'
-// import * as actions from '../actions'
 import { fetchCurrentUser } from '../actions/users'
 import { Loader } from 'semantic-ui-react'
 
-const withAuth = /*FUNCTION*/ (WrappedComponent) => {
+const withAuth = (WrappedComponent) => {
   class AuthorizedComponent extends React.Component {
     componentDidMount() {
       console.log('%c INSIDE COMPONENT DID MOUNT FOR AUTH HOC', 'color: purple')
@@ -30,13 +29,6 @@ const withAuth = /*FUNCTION*/ (WrappedComponent) => {
     }
   }
 
-  // const mapStateToProps = (reduxStoreState) => {
-  //   return {
-  //     loggedIn: reduxStoreState.usersReducer.loggedIn,
-  //     authenticatingUser: reduxStoreState.usersReducer.authenticatingUser
-  //   }
-  // }
-
   const mapStateToProps = (state) => {
     return {
         loggedIn: state.user.loggedIn,
@@ -44,12 +36,9 @@ const withAuth = /*FUNCTION*/ (WrappedComponent) => {
     }
 }
 
-  // const mapStateToProps=({loggedIn, authenticatingUser}) => {loggedIn, authenticatingUser}
+const mapDispatchToProps = { fetchCurrentUser: fetchCurrentUser }
 
-
-  const mapDispatchToProps = { fetchCurrentUser: fetchCurrentUser }
-
-  return connect(mapStateToProps, mapDispatchToProps)(AuthorizedComponent)
+return connect(mapStateToProps, mapDispatchToProps)(AuthorizedComponent)
 }
 
 export default withAuth
