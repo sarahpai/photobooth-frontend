@@ -1,7 +1,8 @@
 import React from 'react'
 import '../css/style.css'
-import FrameTemplate from '../components/FrameTemplate'
+import FrameTemplate from './FrameTemplate'
 import { connect } from 'react-redux';
+// import withAuth from '../hocs/withAuth';
 
 let video
 let canvas
@@ -89,6 +90,8 @@ class Photobooth extends React.Component {
 
 	
 	render() {
+		// const faceFilter = require('facefilter/dist/jeelizFaceFilterES6.js')
+
 		return (
 			<>	
 			<div id="video-container">
