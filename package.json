@@ -9,6 +9,7 @@
   ],
   "dependencies": {
     "browserify": "^16.2.3",
+    "html2canvas": "^1.0.0-alpha.12",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-redux": "^6.0.0",

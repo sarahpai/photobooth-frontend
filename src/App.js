@@ -6,6 +6,7 @@ import Homepage from './containers/Homepage.jsx';
 import LoginForm from './components/LoginForm.jsx';
 import NotFound from './components/notFound.jsx';
 import PhotoTake from './components/PhotoTake.jsx';
+// import DemoGlasses from './components/DemoGlasses';
 
 
 
@@ -19,6 +20,7 @@ const App = props => {
           <Route exact path='/photobooth' component={Photobooth}/>
           <Route exact path='/homepage' component={Homepage}/>
           <Route exact path='/login' component={LoginForm} />
+          <Route exact path='/photobooth/take' component={PhotoTake} />
           <Route exact path='/photobooth/take' component={PhotoTake} />
           <Route component={NotFound}/>
         </Switch>
