@@ -2,17 +2,26 @@
   "name": "photobooth-frontend",
   "version": "0.1.0",
   "private": true,
+  "keywords": [
+    "tracking",
+    "trackingjs",
+    "webrtc"
+  ],
   "dependencies": {
+    "browserify": "^16.2.3",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.3",
+    "react-sound": "^1.2.0",
+    "react-webcam": "^1.1.0",
     "redux": "^4.0.1",
+    "redux-actions": "^2.6.4",
     "redux-devtools-extension": "^2.13.7",
     "redux-thunk": "^2.3.0",
     "semantic-ui-react": "^0.84.0",
-    "tracking": "^1.1.3"
+    "tracking.js": "^0.1.1"
   },
   "scripts": {
     "start": "react-scripts start",

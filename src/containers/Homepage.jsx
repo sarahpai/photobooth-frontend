@@ -1,25 +1,19 @@
 import React from 'react'
-// import Photobooth from '../components/Photobooth'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import withAuth from '../components/withAuth'
-
+import '../css/homepage.css'
 
 const Homepage = ({username, full_name, email}) => {
 
-
 	return (
-		<div>
-			<h1>Welcome {username}</h1>
+		<>
+			<h1>Welcome username: {username}</h1>
 			<br></br>
-			<h1>Welcome {full_name}</h1>
+			<h1>fullname is: {full_name}</h1>
 			<br></br>
-			<h1>Welcome { email }</h1>
-		
-			<Link to={`/photobooth`} className="nav-link">Click to Begin</Link>
-		
-		
-		</div>
+			<h1>email: {email}</h1>
+			<Link to="/photobooth"><button type="submit">Let's begin the photobooth</button></Link>		</>
 	)
 }
 
