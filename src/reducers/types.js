@@ -10,3 +10,4 @@ export const LOGOUT_USER = "LOGOUT_USER";
 // Photos
 export const PHOTO_CAPTURED = "PHOTO_CAPTURED";
 export const PHOTO_ALL_CAPTURED = "PHOTO_ALL_CAPTURED";
+export const RESET_PHOTOS = "RESET_PHOTOS";

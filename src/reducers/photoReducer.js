@@ -1,4 +1,4 @@
-import { PHOTO_CAPTURED, PHOTO_ALL_CAPTURED} from './types'
+import { PHOTO_CAPTURED, PHOTO_ALL_CAPTURED, RESET_PHOTOS} from './types'
 
 const initialState = {
 	photos: [],
@@ -14,8 +14,9 @@ const photoReducer = (state = initialState, action) => {
 			return { ...state, photos: [...state.photos, action.photo], number_of_remain: state.number_of_remain - 1, shouldStopCapture: false }
 		case PHOTO_ALL_CAPTURED:
 			console.log("=====LAST PHOTO BEING TAKEN from PHOTOREDUCER=====");
-			
 			return { ...state, photos: state.photos.concat([action.payload]), number_of_remain: state.MAX_PHOTOS_CAPTURED, shouldStopCapture: true }
+		case RESET_PHOTOS:
+			return {...initialState}
 		default:
 			return state
 	}

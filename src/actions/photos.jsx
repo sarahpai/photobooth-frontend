@@ -1,5 +1,5 @@
 // import { createAction } from 'redux-actions';
-import {PHOTO_CAPTURED, PHOTO_ALL_CAPTURED} from '../reducers/types'
+import {PHOTO_CAPTURED, PHOTO_ALL_CAPTURED, RESET_PHOTOS} from '../reducers/types'
 
 // export default {
 //   photoCaptured: createAction(PHOTO_CAPTURED),
@@ -8,7 +8,7 @@ import {PHOTO_CAPTURED, PHOTO_ALL_CAPTURED} from '../reducers/types'
 // };
 
 export const photoCapturedAction = (photo) => {
-  debugger
+  // debugger
   return { type: PHOTO_CAPTURED, photo: photo}
 }
 
@@ -16,4 +16,7 @@ export const lastPhotoAction = (lastPhoto) => {
   return { type: PHOTO_ALL_CAPTURED, lastPhoto: lastPhoto}
 }
 
+export const resetPhotoAction = () => {
+  return {type: RESET_PHOTOS}
+}
 
