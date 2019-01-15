@@ -1,6 +1,7 @@
 import React from 'react'
 import '../css/style.css'
 import { Link } from 'react-router-dom';
+import '../css/photobooth_theme.css'
 // import FrameTemplate from './FrameTemplate'
 // import { connect } from 'react-redux';
 // import withAuth from '../hocs/withAuth';
@@ -17,8 +18,15 @@ class Photobooth extends React.Component {
 	render() {
 		return <>
 			<h2>Photobooth Page</h2>
-			<h3>Will render mission themed frames here IMAGESSSSSSSSSSSS</h3>
-			<Link to="/photobooth/take"><button type="submit">Selected Theme Mission</button></Link>
+			<div className="overlay-container">
+				<img className="strip-template" alt="strip" src="http://www.creatingkeepsakes.com/images/wysiwyg_img/PT-FS-D-11_27707.jpg" ></img>
+				<img className="strip-template" alt="square" src="http://www.creatingkeepsakes.com/images/wysiwyg_img/PT-FS-D-11_27707.jpg" ></img>
+				<img className="strip-template" alt="gif" src="http://www.creatingkeepsakes.com/images/wysiwyg_img/PT-FS-D-11_27707.jpg" ></img>
+			  <div className="strip-text">
+				<h3>strip</h3>
+			  </div>
+			</div>
+			<Link id="button-continue" to="/photobooth/take"><button type="submit">Selected Theme Mission</button></Link>
 		</>
 		
 	}

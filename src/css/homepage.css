@@ -1,3 +1,62 @@
-.link {
-	
+@font-face {
+	font-family: 'PIROU';
+	font-style: normal;
+	font-weight: normal;
+	src: local('PIROU'), url(../fonts/Pirou-Regular.otf) format('otf');
+}
+
+
+
+/* #background { 
+		background: url(../images/PHOTO.jpg) no-repeat center center;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover; 
+		background-size: 100% 100%;
+		position: relative;
+	} */
+
+
+
+#title {
+	font-family: 'PIROU';
+	color: rgb(69, 87, 85);
+	text-align: center;
+	margin-top: 15%;
+	/* margin-left: 5%; */
+	position: relative;
+	font-size: 100px;
+}
+
+#name{
+	color:  rgb(69, 87, 85);
+	font-family: 'Josefin Slab';
+	font-style: serif;
+	font-weight: 'light';
+	margin-top: -4%;
+	margin-left: 45%;
+	position: absolute;
+	font-size: 30px;
+}
+
+.email {
+	color: #ffbd4a;
+}
+
+#username {
+	color:  rgb(69, 87, 85);
+	font-family: 'Josefin Slab';
+	font-style: serif;
+	font-weight: 'light';
+	margin-top: 0%;
+	margin-left: 41%;
+	position: absolute;
+	font-size: 30px;
+}
+
+#button-image {
+	margin-top: 5%;
+	margin-left: 45rem;
+	position: absolute;
 }

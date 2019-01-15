@@ -2,18 +2,25 @@ import React from 'react';
 import {connect} from 'react-redux';
 // import html2canvas from 'html2canvas'
 
-
 const PhotoRender=(props) =>{
+	
+	const handleSubmit = (e) => {
+		console.log(e.target);
+		
+	}
+
+
+
 	return (
 		<div>
 			{props.photos.map((photo, index) => {
 				return (
 					<span key={index} style={{ float: "left" }}>
-						<img alt="images" src={photo} width="400px" height="400px" />
+						<img id="pic" alt="images" src={photo} width="300px" height="300px" />
 					</span>
 				)
 			})}
-			{props.photos.length === 4 ? <> <input className="he" type="text" placeholder="email@gmail.com" style={{ zIndex: -1 }}  /><button>SUBMIT</button> </> : null} 
+			{props.photos.length === 4 ? <> <input className="email-input" type="text" placeholder="enter your email address" style={{ zIndex: -1 }}  /><button onClick={(e)=>handleSubmit(e)} >SUBMIT</button> </> : null} 
 		</div>
 	)
 	// canvasCapture=()=>{

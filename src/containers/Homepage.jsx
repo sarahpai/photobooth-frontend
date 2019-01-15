@@ -3,17 +3,19 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import withAuth from '../components/withAuth'
 import '../css/homepage.css'
-
+import '../images/PHOTO.png'
+import '../images/lense.png'
 const Homepage = ({username, full_name, email}) => {
 
 	return (
-		<>
-			<h1>Welcome username: {username}</h1>
+		<div className="background">
+			<h1 id="title">PHOTO</h1>
 			<br></br>
-			<h1>fullname is: {full_name}</h1>
+			<h1 id="name" >booth app</h1>
 			<br></br>
-			<h1>email: {email}</h1>
-			<Link to="/photobooth"><button type="submit">Let's begin the photobooth</button></Link>		</>
+			<h3 id="username">Welcome {username}</h3>
+			<Link id="button-image" to="/photobooth"><button type="submit">Let's begin the photobooth</button></Link>
+		</div>
 	)
 }
 

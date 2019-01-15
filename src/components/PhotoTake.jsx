@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { photoCapturedAction, lastPhotoAction, resetPhotoAction } from '../actions/photos'
 // import Demo from "../libraries/demo.js"
 import PhotoRender from './PhotoRender.jsx'
+import '../css/photobooth.css'
 class PhotoTake extends Component {
   
   setRef = (webcam) => {
@@ -38,13 +39,13 @@ class PhotoTake extends Component {
               </div>
             </div>
           
-            <div className="all-images" style={{ position: "absolute", top: "50%", color: "red", width: "100%", textAlign: "center" }}>
-              <button onClick={this.capture} >Capture photo</button>
-              <button onClick={this.resetPhoto} >Reset Photo</button>
-              <h2>Screenshot</h2>
+            {/* <div className="all-images" style={{ position: "absolute", top: "50%", color: "red", width: "100%", textAlign: "center" }}> */}
+              <button id="capture" onClick={this.capture} >Capture photo</button>
+              <button id="reset" onClick={this.resetPhoto} >Reset Photo</button>
+              {/* <h2>Screenshot</h2> */}
               <PhotoRender />
             </div>
-          </div>
+          // </div>
           : <PhotoRender /> }
       </div>
     );
