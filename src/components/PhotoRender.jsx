@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-// import html2canvas from 'html2canvas'
-
+import '../css/photobooth.css'
 const PhotoRender=(props) =>{
 	
 	const handleSubmit = (e) => {
@@ -12,12 +11,19 @@ const PhotoRender=(props) =>{
 
 
 	return (
-		<div>
+		<div className="photo-container">
 			{props.photos.map((photo, index) => {
 				return (
-					<span key={index} style={{ float: "left" }}>
-						<img id="pic" alt="images" src={photo} width="300px" height="300px" />
-					</span>
+					<canvas>
+
+					<div className="photo" key={index}>
+					{/* <span key={index} style={{ float: "left" }}> */}
+						<img id="pic" alt="images" src={photo}  />
+					{/* </span> */}
+					</div>
+					</canvas>
+
+					
 				)
 			})}
 			{props.photos.length === 4 ? <> <input className="email-input" type="text" placeholder="enter your email address" style={{ zIndex: -1 }}  /><button onClick={(e)=>handleSubmit(e)} >SUBMIT</button> </> : null} 

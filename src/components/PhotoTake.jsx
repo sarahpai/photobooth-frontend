@@ -4,58 +4,76 @@ import Webcam from 'react-webcam';
 // import Sound from 'react-sound';
 import { connect } from 'react-redux';
 import { photoCapturedAction, lastPhotoAction, resetPhotoAction } from '../actions/photos'
+import { fetchGifFrame } from '../actions/frames'
 // import Demo from "../libraries/demo.js"
 import PhotoRender from './PhotoRender.jsx'
 import '../css/photobooth.css'
+import html2canvas from 'html2canvas'
+
 class PhotoTake extends Component {
+  
+  state= {
+    photo:[]
+  }
   
   setRef = (webcam) => {
     //from Webcam react-webcam
     this.webcam = webcam;
   }
 
-  capture = () => {
+  capture = (frame) => {
     const imageSrc = this.webcam.getScreenshot();
-    console.log("%c PhotoTake props from redux are:", 'color: pink', this.props.photoCaptured, imageSrc);
+    console.log("%c PhotoTake props from redux are:", 'color: pink', this.props.photoCaptured, frame);
     this.props.photoCaptured(imageSrc)
+  
   };
+
+  captureFrame = () => {
+    html2canvas(document.frame)
+  }
 
   resetPhoto=()=> {
     this.props.resetPhoto()
   }
-
+  componentDidMount() {
+  this.props.gifFrame()
+}
 
   render() {
     console.log("%c props of PhotoTake are", 'color: yellow', this.props)
-
+    let frame = document.getElementById('frame')
     return (
-      <div>
-      
+      <>
         {this.props.number > 0 ?
-          <div className="photo-take">
-            <div className="photos-webcam ">
-              <div style={{ zIndex: -1, textAlign: "center" }}>
-                <Webcam ref={this.setRef} audio={false} className="webcam" />
-              </div>
+          <div id="frame">
+            <div id="image-container">
+              <img src={this.props.gif_frame} />
             </div>
-          
-            {/* <div className="all-images" style={{ position: "absolute", top: "50%", color: "red", width: "100%", textAlign: "center" }}> */}
-              <button id="capture" onClick={this.capture} >Capture photo</button>
+            <div id="webcam-container">
+              <Webcam  ref={this.setRef} audio={false} className="webcam" />
+            </div>
+  
+            <div className="buttons">  
+              <button id="capture" onClick={()=>this.capture(frame)} >Capture photo</button>
               <button id="reset" onClick={this.resetPhoto} >Reset Photo</button>
-              {/* <h2>Screenshot</h2> */}
+            </div>
+            <div className="photo-column">
               <PhotoRender />
             </div>
-          // </div>
-          : <PhotoRender /> }
-      </div>
+          </div>
+         
+          : <PhotoRender />}
+        </>
+     
     );
   }
 }
 
 function mapStateToProps(state) {
-	console.log("state from phototakepage container", state.photoReducer);
+	console.log("state from phototakepage container", state);
 	return {	
-	 photos: state.photoReducer.photos, number: state.photoReducer.number_of_remain
+   photos: state.photoReducer.photos, number: state.photoReducer.number_of_remain,
+   gif_frame: state.frameReducer.gif_frame
 	}
 }
 
@@ -65,7 +83,8 @@ const mapDispatchToProps = (dispatch) => {
 	return {
 		lastPhotoCaptured: photos => {dispatch(lastPhotoAction(photos))},
 		photoCaptured: imageSrc =>{ dispatch(photoCapturedAction(imageSrc))},
-		resetPhoto: () =>{ dispatch(resetPhotoAction())}
+    resetPhoto: () => { dispatch(resetPhotoAction()) },
+    gifFrame: () => {dispatch(fetchGifFrame())}
 		}
 	}
 

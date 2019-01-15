@@ -2,6 +2,10 @@ import React from 'react'
 import '../css/style.css'
 import { Link } from 'react-router-dom';
 import '../css/photobooth_theme.css'
+// import { fetchFrames } from '../actions/frames';
+import { connect } from 'react-redux';
+import withAuth from '../components/withAuth'
+import {fetchHorizontalFrame, fetchVerticalFrame, fetchGifFrame} from '../actions/frames'
 // import FrameTemplate from './FrameTemplate'
 // import { connect } from 'react-redux';
 // import withAuth from '../hocs/withAuth';
@@ -15,23 +19,43 @@ import '../css/photobooth_theme.css'
 
 
 class Photobooth extends React.Component {
+	componentDidMount() {
+		this.props.horizontalFrame()
+		this.props.verticalFrame()
+		this.props.gifFrame()
+	}
 	render() {
 		return <>
-			<h2>Photobooth Page</h2>
-			<div className="overlay-container">
-				<img className="strip-template" alt="strip" src="http://www.creatingkeepsakes.com/images/wysiwyg_img/PT-FS-D-11_27707.jpg" ></img>
-				<img className="strip-template" alt="square" src="http://www.creatingkeepsakes.com/images/wysiwyg_img/PT-FS-D-11_27707.jpg" ></img>
-				<img className="strip-template" alt="gif" src="http://www.creatingkeepsakes.com/images/wysiwyg_img/PT-FS-D-11_27707.jpg" ></img>
-			  <div className="strip-text">
-				<h3>strip</h3>
-			  </div>
-			</div>
+			<h2 style={{textAlign: 'center'}}>Select your Frame</h2>
 			<Link id="button-continue" to="/photobooth/take"><button type="submit">Selected Theme Mission</button></Link>
+			<div className="overlay-container">
+			
+				<img id="frame" alt="horizontal" src={this.props.horizontal_frame} ></img>
+				<img id="frame" alt="vertical" src={this.props.vertical_frame} ></img>
+				<img id="frame" alt="gif" src={this.props.gif_frame} ></img>
+			
+			</div>
 		</>
 		
 	}
 }
-export default Photobooth;
+
+const mapStateToProps = (state) => {
+	return {
+		horizontal_frame: state.frameReducer.horizontal_frame,
+		vertical_frame: state.frameReducer.vertical_frame,
+		gif_frame: state.frameReducer.gif_frame
+	}
+}
+
+const mapDispatchToProps=(dispatch) => {
+	return {
+		horizontalFrame: () => dispatch(fetchHorizontalFrame()),
+		verticalFrame: () => dispatch(fetchVerticalFrame()),
+		gifFrame: () => dispatch(fetchGifFrame())
+	}
+}
+export default withAuth(connect(mapStateToProps,mapDispatchToProps)(Photobooth));
 
 
 
