@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import withAuth from '../components/withAuth'
 import '../css/homepage.css'
-import '../images/PHOTO.png'
 import '../images/lense.png'
+
 const Homepage = ({username, full_name, email}) => {
 
 	return (

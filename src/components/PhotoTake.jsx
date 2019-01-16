@@ -4,67 +4,92 @@ import Webcam from 'react-webcam';
 // import Sound from 'react-sound';
 import { connect } from 'react-redux';
 import { photoCapturedAction, lastPhotoAction, resetPhotoAction } from '../actions/photos'
-import { fetchGifFrame } from '../actions/frames'
-// import Demo from "../libraries/demo.js"
+import { fetchGifFrame,  } from '../actions/frames'
 import PhotoRender from './PhotoRender.jsx'
 import '../css/photobooth.css'
 import html2canvas from 'html2canvas'
-
+// import minionFrame from '../images/minion+frame.png'
 class PhotoTake extends Component {
   
   state= {
-    photo:[]
+    photo: []
   }
-  
+
   setRef = (webcam) => {
     //from Webcam react-webcam
     this.webcam = webcam;
   }
 
-  capture = (frame) => {
+  capture = () => {
     const imageSrc = this.webcam.getScreenshot();
-    console.log("%c PhotoTake props from redux are:", 'color: pink', this.props.photoCaptured, frame);
+    console.log("%c PhotoTake props from redux are:", 'color: pink', this.props.photoCaptured);
     this.props.photoCaptured(imageSrc)
-  
+    
+    // this is HTML2CANVAS capture
+    // let capture = document.querySelector("#image")
+    // console.log(capture);
+    // html2canvas(capture).then(canvas => {
+    //   document.body.appendChild(canvas)
+    // })
   };
 
-  captureFrame = () => {
-    html2canvas(document.frame)
-  }
 
   resetPhoto=()=> {
     this.props.resetPhoto()
   }
-  componentDidMount() {
-  this.props.gifFrame()
-}
+ 
 
   render() {
     console.log("%c props of PhotoTake are", 'color: yellow', this.props)
-    let frame = document.getElementById('frame')
+    
+    // let webcam = document.querySelector(".webcam")
+    // console.log(webcam);
+    
+    
     return (
       <>
         {this.props.number > 0 ?
-          <div id="frame">
+          <div  id="frame">
             <div id="image-container">
-              <img src={this.props.gif_frame} />
+              <img
+                id="image"
+                alt="images"
+                src={this.props.frame}
+              />
             </div>
             <div id="webcam-container">
-              <Webcam  ref={this.setRef} audio={false} className="webcam" />
+              <Webcam
+                className="webcam"
+                ref={this.setRef}
+                audio={false}
+              />
             </div>
   
             <div className="buttons">  
-              <button id="capture" onClick={()=>this.capture(frame)} >Capture photo</button>
-              <button id="reset" onClick={this.resetPhoto} >Reset Photo</button>
+              <button
+                id="capture"
+                onClick={() => this.capture()}
+              >
+                Capture photo
+              </button>
+              <button
+                id="reset"
+                onClick={this.resetPhoto}
+              >
+                Reset Photo
+              </button>
             </div>
-            <div className="photo-column">
+            <div
+              className="photo-column"
+              ref="canvas"
+            >
               <PhotoRender />
             </div>
           </div>
-         
-          : <PhotoRender />}
+          :
+          <PhotoRender />
+        }
         </>
-     
     );
   }
 }
@@ -72,8 +97,10 @@ class PhotoTake extends Component {
 function mapStateToProps(state) {
 	console.log("state from phototakepage container", state);
 	return {	
-   photos: state.photoReducer.photos, number: state.photoReducer.number_of_remain,
-   gif_frame: state.frameReducer.gif_frame
+    photos: state.photoReducer.photos,
+    number: state.photoReducer.number_of_remain,
+    frame: state.frameReducer.selected_frame
+  //  gif_frame: state.frameReducer.gif_frame
 	}
 }
 
@@ -84,7 +111,8 @@ const mapDispatchToProps = (dispatch) => {
 		lastPhotoCaptured: photos => {dispatch(lastPhotoAction(photos))},
 		photoCaptured: imageSrc =>{ dispatch(photoCapturedAction(imageSrc))},
     resetPhoto: () => { dispatch(resetPhotoAction()) },
-    gifFrame: () => {dispatch(fetchGifFrame())}
+    // selectedFrame: () => {dispatch(selectedFrame(selectedFrame))}
+    // gifFrame: () => {dispatch(fetchGifFrame())}
 		}
 	}
 

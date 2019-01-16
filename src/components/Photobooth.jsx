@@ -5,34 +5,54 @@ import '../css/photobooth_theme.css'
 // import { fetchFrames } from '../actions/frames';
 import { connect } from 'react-redux';
 import withAuth from '../components/withAuth'
-import {fetchHorizontalFrame, fetchVerticalFrame, fetchGifFrame} from '../actions/frames'
+import { fetchHorizontalFrame, fetchVerticalFrame, fetchGifFrame, selectFrame } from '../actions/frames'
+import minionFrame from '../images/minion+frame.png'
+import powerFrame from '../images/vertical-frame.png'
+import cartoon from '../images/four image template.jpg'
 // import FrameTemplate from './FrameTemplate'
 // import { connect } from 'react-redux';
 // import withAuth from '../hocs/withAuth';
 // import Webcam from 'react-webcam';
 
-// let video
-// let canvas
-// let photos
-// let photoFilter
-// let clearButton
 
 
 class Photobooth extends React.Component {
+	
 	componentDidMount() {
 		this.props.horizontalFrame()
 		this.props.verticalFrame()
 		this.props.gifFrame()
 	}
+
+	handleClick=(event)=> {
+		console.log(event.target.name);
+		let selectedFrame;
+		switch (event.target.name) {
+			case "minion":
+				selectedFrame = minionFrame
+				break;
+			case "power":
+				selectedFrame = powerFrame
+				break;
+			case "cartoon":
+				selectedFrame = cartoon
+				break;
+			default:
+				selectedFrame = "minionDefault"
+		} console.log("frame selected", selectedFrame)
+		this.props.selectFrame(selectedFrame)
+	}
+
+
 	render() {
 		return <>
 			<h2 style={{textAlign: 'center'}}>Select your Frame</h2>
 			<Link id="button-continue" to="/photobooth/take"><button type="submit">Selected Theme Mission</button></Link>
 			<div className="overlay-container">
 			
-				<img id="frame" alt="horizontal" src={this.props.horizontal_frame} ></img>
-				<img id="frame" alt="vertical" src={this.props.vertical_frame} ></img>
-				<img id="frame" alt="gif" src={this.props.gif_frame} ></img>
+				<img onClick={(event)=>this.handleClick(event)} name="minion" id="frame" alt="horizontal" src={this.props.horizontal_frame} ></img>
+				<img onClick={(event)=>this.handleClick(event)} name="power" id="frame" alt="vertical" src={this.props.vertical_frame} ></img>
+				<img onClick={(event)=>this.handleClick(event)} name="cartoon" id="frame" alt="gif" src={this.props.gif_frame} ></img>
 			
 			</div>
 		</>
@@ -44,7 +64,8 @@ const mapStateToProps = (state) => {
 	return {
 		horizontal_frame: state.frameReducer.horizontal_frame,
 		vertical_frame: state.frameReducer.vertical_frame,
-		gif_frame: state.frameReducer.gif_frame
+		gif_frame: state.frameReducer.gif_frame,
+		selected_frame: state.frameReducer.selected_frame
 	}
 }
 
@@ -52,7 +73,8 @@ const mapDispatchToProps=(dispatch) => {
 	return {
 		horizontalFrame: () => dispatch(fetchHorizontalFrame()),
 		verticalFrame: () => dispatch(fetchVerticalFrame()),
-		gifFrame: () => dispatch(fetchGifFrame())
+		gifFrame: () => dispatch(fetchGifFrame()),
+		selectFrame: (clickedFrame)=> dispatch(selectFrame(clickedFrame))
 	}
 }
 export default withAuth(connect(mapStateToProps,mapDispatchToProps)(Photobooth));

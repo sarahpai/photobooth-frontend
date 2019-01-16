@@ -1,4 +1,4 @@
-import {  ADD_GIF_FRAME, ADD_HORIZONTAL_FRAME, ADD_VERTICAL_FRAME } from '../reducers/types.js';
+import {  ADD_GIF_FRAME, ADD_HORIZONTAL_FRAME, ADD_VERTICAL_FRAME, SELECT_FRAME } from '../reducers/types.js';
 
 // export const addHorizontalFrame=(frame) =>{
 // 	return (dispatch) => { //this comes from thunk technically we cant return a fn in action creators
@@ -81,4 +81,12 @@ export const fetchGifFrame = () => {
 				dispatch({ type: ADD_GIF_FRAME, payload: JSONResponse[0].frame_gif })
 			})
 	  }
+}
+
+export const selectFrame = (clickedFrame) => {
+	debugger
+	return (dispatch) => {
+		dispatch({ type: SELECT_FRAME, payload: clickedFrame })
+	}
+	
 }

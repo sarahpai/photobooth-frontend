@@ -1,9 +1,18 @@
+@font-face {
+	font-family: 'PIROU';
+	font-style: normal;
+	font-weight: normal;
+	src: local('PIROU'), url(../fonts/Pirou-Regular.otf) format('otf');
+}
+
 #header{
 	color: rgb(69, 87, 85);
+	
 }
 
 #button {
 	background-color:rgba(219, 248,251);
+	font-family: 'PIROU';
 }
 
 #message {

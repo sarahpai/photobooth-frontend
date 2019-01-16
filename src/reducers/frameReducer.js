@@ -1,9 +1,10 @@
-import { ADD_VERTICAL_FRAME, ADD_HORIZONTAL_FRAME, ADD_GIF_FRAME} from './types'
+import { ADD_VERTICAL_FRAME, ADD_HORIZONTAL_FRAME, ADD_GIF_FRAME, SELECT_FRAME} from './types'
 
 const initialState = {
 	vertical_frame: "",
 	horizontal_frame: "",
-	gif_frame: ""
+	gif_frame: "",
+	selected_frame: ""
 };
   
 const frameReducer = (state = initialState, action) => {
@@ -15,7 +16,12 @@ const frameReducer = (state = initialState, action) => {
 			console.log("=====HORIZONTAL FRAME has been selected from REDUCER ======");
 			return { ...state, horizontal_frame: action.payload }
 		case ADD_GIF_FRAME:
-			return {...state, gif_frame: action.payload }
+			return { ...state, gif_frame: action.payload }
+		case SELECT_FRAME:
+			debugger
+			return {
+				...state, selected_frame: action.payload
+			}
 		default:
 			return state
 	}

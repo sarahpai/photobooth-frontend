@@ -14,14 +14,13 @@ const PhotoRender=(props) =>{
 		<div className="photo-container">
 			{props.photos.map((photo, index) => {
 				return (
-					<canvas>
-
-					<div className="photo" key={index}>
+				
+					<div className="photo" key={index}  >
 					{/* <span key={index} style={{ float: "left" }}> */}
-						<img id="pic" alt="images" src={photo}  />
+						<img id="pic" src={photo}  />
 					{/* </span> */}
 					</div>
-					</canvas>
+				
 
 					
 				)
