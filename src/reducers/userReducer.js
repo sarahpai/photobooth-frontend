@@ -17,6 +17,8 @@ const userReducer = (state = initialState, action) => {
 			return { ...state, authenticatingUser: true }
 		case AUTHENTICATED_USER:
 			return { ...state, authenticatingUser: false }
+		case "SIGNED_UP_USER":
+			return {...state, authenticatingUser: true}
 		case FAILED_LOGIN: //for error handling
 			return {
 				...state, failedLogin: true,

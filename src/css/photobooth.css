@@ -1,42 +1,85 @@
-.buttons{
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
-}
-/* #capture { */
-	/* margin-top: 0%; */
-	/* margin-left: auto;
-	margin-right: auto;
-	display: block; */
-	/* position: absolute; */
-/* }  */
-/* 
-#reset {
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
-} */
 
-.photo {
-	flex-wrap: wrap;
-	padding:  0 4px;
-	float: left;
-}
-.photo-column {
-	flex: 50%;
-	padding: 0, 4px;
+#root {
+position: relative;
+width: 100vw;
+height: 100vh;
 }
 
-.photos img {
-	margin-top: 8px;
-	vertical-align: middle;
+#webcam {
+position: absolute;
+margin: auto;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+z-index: 10;
 }
 
-.webcam {
-	width: 640px;
-	height: 480px;
-	z-index: 10;
+#border {
 	position: absolute;
-	margin-top: -1px;
-	margin-left: 62px;
+	margin: auto;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+ } 
+
+.captureImage {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	background-size: contain !important;
+	background-repeat: no-repeat !important;
+	z-index: -10;
 }
+
+.captureFrame {
+	position: absolute;
+	width: 20%;
+	height: 20%;
+	top: 0;
+	left: 0;
+	padding: 20px;
+	background-repeat: no-repeat !important;
+	background-size: contain !important;
+}
+
+#mission-text h2 {
+	position: absolute;
+	align-items: center;
+	font-size: 72px;
+	z-index: 10;
+}
+#countdown {
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+	font-size: 72px;
+	z-index: 10;
+}
+
+.button-div{
+	position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+	bottom: 140px;
+}
+
+.button-div button {
+	position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(245, 231, 231);
+    bottom: 8%;
+    z-index: 10;
+}
+
+

@@ -9,10 +9,6 @@ import { fetchHorizontalFrame, fetchVerticalFrame, fetchGifFrame, selectFrame } 
 import minionFrame from '../images/minion+frame.png'
 import powerFrame from '../images/vertical-frame.png'
 import cartoon from '../images/four image template.jpg'
-// import FrameTemplate from './FrameTemplate'
-// import { connect } from 'react-redux';
-// import withAuth from '../hocs/withAuth';
-// import Webcam from 'react-webcam';
 
 
 
@@ -47,12 +43,12 @@ class Photobooth extends React.Component {
 	render() {
 		return <>
 			<h2 style={{textAlign: 'center'}}>Select your Frame</h2>
-			<Link id="button-continue" to="/photobooth/take"><button type="submit">Selected Theme Mission</button></Link>
+			{/* <Link id="button-continue" to="/photobooth/take"><button type="submit">Selected Theme Mission</button></Link> */}
 			<div className="overlay-container">
 			
-				<img onClick={(event)=>this.handleClick(event)} name="minion" id="frame" alt="horizontal" src={this.props.horizontal_frame} ></img>
-				<img onClick={(event)=>this.handleClick(event)} name="power" id="frame" alt="vertical" src={this.props.vertical_frame} ></img>
-				<img onClick={(event)=>this.handleClick(event)} name="cartoon" id="frame" alt="gif" src={this.props.gif_frame} ></img>
+			<Link to="/photobooth/take"><img onClick={(event)=>this.handleClick(event)} name="cartoon" id="frame" alt="horizontal" src={this.props.horizontal_frame} ></img></Link>	
+			<Link to="/photobooth/take"><img onClick={(event)=>this.handleClick(event)} name="power" id="frame" alt="vertical" src={this.props.vertical_frame} ></img></Link>
+			<Link to="/photobooth/take"><img onClick={(event)=>this.handleClick(event)} name="minion" id="frame" alt="gif" src={this.props.gif_frame} ></img></Link>
 			
 			</div>
 		</>
