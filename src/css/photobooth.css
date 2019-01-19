@@ -83,3 +83,6 @@ z-index: 10;
 }
 
 
+.photo-container {
+	position: relative;
+}
