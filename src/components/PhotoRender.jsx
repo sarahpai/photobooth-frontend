@@ -41,7 +41,6 @@ function mapStateToProps(state) {
 	return {
 		photos: state.photoReducer.photos,
 		frames: state.photoReducer.frames,
-		// frame: state.frameReducer.selected_frame
 	}
 }
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Webcam from 'react-webcam';
 import { connect } from 'react-redux';
-import { photoCapturedAction, lastPhotoAction, resetPhotoAction } from '../actions/photos'
+import { photoCapturedAction, resetPhotoAction } from '../actions/photos'
 import PhotoRender from './PhotoRender.jsx'
 import '../css/photobooth.css'
 import Frame from './Frame.js'
@@ -41,29 +41,22 @@ class PhotoTake extends Component {
 
   }
    
-capture = () => {
-  this.timer = setInterval(() => {
-    if (this.state.countdown === 1) {
-      new Promise((resolve, reject) => {
-        this.setState({ file: this.webcam.getScreenshot() });
-        resolve();
-      });
-    } if (this.state.countdown > 1) {
-      this.setState({ countdown: this.state.countdown - 1 });
-    } else {
-      clearInterval(this.timer);
-      this.setState({currentStatus: 2})
-    }
-  }, 1000);
-  this.setState({ currentStatus: 1, countdown: 3});
- 
-  // this is HTML2CANVAS capture
-  // let capture = document.querySelector("#image")
-  // console.log(capture);
-  // html2canvas(capture).then(canvas => {
-  //   document.body.appendChild(canvas)
-  // })
-}
+  capture = () => {
+    this.timer = setInterval(() => {
+      if (this.state.countdown === 1) {
+        new Promise((resolve, reject) => {
+          this.setState({ file: this.webcam.getScreenshot() });
+          resolve();
+        });
+      } if (this.state.countdown > 1) {
+        this.setState({ countdown: this.state.countdown - 1 });
+      } else {
+        clearInterval(this.timer);
+        this.setState({currentStatus: 2})
+      }
+    }, 1000);
+    this.setState({ currentStatus: 1, countdown: 3});
+  }
   
   renderResetState = () => {
       this.setState({ currentStatus: 0, countdown: 3, frameCount: this.state.frameCount + 1 })
@@ -138,7 +131,6 @@ capture = () => {
 const mapStateToProps=(state)=> {
 	console.log("state from photo take container", state);
 	return {	
-    // photos: state.photoReducer.photos,
     number: state.photoReducer.number_of_remain,
     frame: state.frameReducer.selected_frame
 	}
@@ -148,9 +140,7 @@ const mapStateToProps=(state)=> {
 const mapDispatchToProps = (dispatch) => {
 	console.log('mapDispatchToProps')
 	return {
-		lastPhotoCaptured: photos => {dispatch(lastPhotoAction(photos))},
 		photoCaptured: (imageSrc, frameSrc) => { dispatch(photoCapturedAction(imageSrc, frameSrc))},
-		// frameCaptured: frameSrc =>{ dispatch(frameCapturedAction(frameSrc))},
     resetPhoto: () => { dispatch(resetPhotoAction()) },
 		}
 	}
