@@ -1,0 +1,46 @@
+.frameImage{
+	display: grid;
+    margin-top: -231px;
+}
+
+
+.image img {
+	/* margin-top: -40px; */
+	position: absolute;
+    left: 20px;
+    top: 50px;
+    z-index: -10;
+}
+
+.my-gallery-class {
+	-webkit-column-count: 3;
+	-moz-column-count:3;
+	column-count: 6;
+	-webkit-column-gap: 1em;
+	-moz-column-gap: 1em;
+	column-gap: 1em;
+	margin: 1.5em;
+	padding: 0;
+	-moz-column-gap: 1.5em;
+	-webkit-column-gap: 1.5em;
+	column-gap: 1.5em;
+	
+}
+
+.image-class {
+	position: absolute;
+}
+
+.image-class img{
+	max-width:50%;
+	position: relative;
+	z-index: -10;
+}
+
+
+.frame-class img{
+	max-width:50%;
+	position: relative;
+}
+
+

@@ -5,7 +5,7 @@ import { photoCapturedAction, resetPhotoAction } from '../actions/photos'
 import '../css/photoTake.css'
 import Frame from './Frame.js'
 import PhotoRender from './PhotoRender.jsx'
-import RenderModule from './RenderModule.js'
+import SubmitRender from './SubmitRender.js'
 class PhotoTake extends Component {
   constructor(props) {
     super(props)
@@ -109,12 +109,12 @@ class PhotoTake extends Component {
               />
             </div>
 
-            <div className="button-div">
+            <div id="button-div">
               <button onClick={this.capture} name="photo-button"></button>
             </div>
               <PhotoRender />
               </div>
-          : <RenderModule />
+          : <SubmitRender />
         }
       </>
     )

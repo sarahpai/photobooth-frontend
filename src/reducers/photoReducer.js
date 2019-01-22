@@ -13,7 +13,7 @@ const photoReducer = (state = initialState, action) => {
 			return { ...state, photos: [...state.photos, action.photo], frames: state.frames.concat([action.frames]), number_of_remain: state.number_of_remain - 1 }
 		case PHOTO_ALL_CAPTURED:
 			console.log("=====LAST PHOTO BEING TAKEN from PHOTOREDUCER=====");
-			return { ...state, photos: state.photos.concat([action.payload]), number_of_remain: state.MAX_PHOTOS_CAPTURED}
+			return { ...state, photos: state.photos.concat([action.payload]), frames: state.frames.concat([action.frames]), number_of_remain: 0}
 		case RESET_PHOTOS:
 			return {...initialState}
 		default:

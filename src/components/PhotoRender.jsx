@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import '../css/photoTake.css'
 import { resetPhotoAction } from '../actions/photos'
+import '../css/photoRender.css'
 
 import Masonry from 'react-masonry-component';
 
@@ -72,26 +72,29 @@ class PhotoRender extends React.Component {
 			
 		const frameChild = frame.map((frame, index) => {
 			return (
-				<img alt="frameImage" key={index} src={frame} />
+			
+
+					<img alt="frameImage" key={index} src={frame} />
+				
 			)
 		})
 			
-		const childElements = this.props.photos.map((p, index) => {
+		const imageChild = this.props.photos.map((p, index) => {
 			return (
-				// <li className="image-element-class">
-				<img alt="photoImage" key={index} src={p} />
-				// </li>
+		
+				<img className="image" alt="photoImage" key={index} src={p} />
+			
 			);
 		});
 
 	return (
 			<Masonry
 				className={'my-gallery-class'}
-				elementType={'ul'}
+				// elementType={'ul'}
 				updateOnEachImageLoad={false}
 			>
-				{childElements}
 				{frameChild}
+				{imageChild}
 			</Masonry>
 			)
 	}
@@ -109,7 +112,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
 	return {
-		resetPhoto: () => { dispatch(resetPhotoAction()) }
+		resetPhoto: () => { dispatch(resetPhotoAction()) },
 	}
 }
 export default connect(mapStateToProps,mapDispatchToProps)(PhotoRender);

@@ -46,70 +46,70 @@ class FrameSelect extends React.Component {
 				<div className="grid-item">
 					<div className="grid-item-content">
 					<Link to="/photobooth/take">
-								<img onClick={(event) => this.handleClick(event)} name="cartoon" src={powerFrame[0]} />
+								<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={powerFrame[0]} />
 							</Link>
 					</div>
 				</div>
 					<div className="grid-item">
 						<div className="grid-item-content">
 							<Link to="/photobooth/take">
-								<img onClick={(event) => this.handleClick(event)} name="cartoon" src={powerFrame[0]} />
+								<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={powerFrame[0]} />
 							</Link>
 						</div>
 					</div>
 					<div className="grid-item">
 						<div className="grid-item-content">
 							<Link to="/photobooth/take">
-								<img onClick={(event) => this.handleClick(event)} name="cartoon" src={minionFrame[0]} />
+								<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={minionFrame[0]} />
 							</Link>	
 						</div>
 					</div>
 				<div className="grid-item">
 					<div className="grid-item-content">
 					<Link to="/photobooth/take">
-								<img onClick={(event) => this.handleClick(event)} name="cartoon" src={powerFrame[0]} />
+								<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={powerFrame[0]} />
 							</Link>
 					</div>
 				</div>
 					<div className="grid-item">
 						<div className="grid-item-content">
 							<Link to="/photobooth/take">
-								<img onClick={(event) => this.handleClick(event)} name="cartoon" src={powerFrame[0]} />
+								<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={powerFrame[0]} />
 							</Link>
 						</div>
 					</div>
 					<div className="grid-item">
 						<div className="grid-item-content">
 							<Link to="/photobooth/take">
-								<img onClick={(event) => this.handleClick(event)} name="cartoon" src={minionFrame[0]} />
+								<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={minionFrame[0]} />
 							</Link>	
 						</div>
 					</div>
 				<div className="grid-item">
 					<div className="grid-item-content">
 					<Link to="/photobooth/take">
-								<img onClick={(event) => this.handleClick(event)} name="cartoon" src={powerFrame[0]} />
+								<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={powerFrame[0]} />
 							</Link>
 					</div>
 				</div>
 					<div className="grid-item">
 						<div className="grid-item-content">
 							<Link to="/photobooth/take">
-								<img onClick={(event) => this.handleClick(event)} name="cartoon" src={powerFrame[0]} />
+								<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={powerFrame[0]} />
 							</Link>
 						</div>
 					</div>
 					<div className="grid-item">
 						<div className="grid-item-content">
 							<Link to="/photobooth/take">
-								<img onClick={(event) => this.handleClick(event)} name="cartoon" src={minionFrame[0]} />
+								<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={minionFrame[0]} />
 							</Link>	
 						</div>
 					</div>
 				<div className="grid-item">
 					<div className="grid-item-content">
 					<Link to="/photobooth/take">
-								<img onClick={(event) => this.handleClick(event)} name="cartoon" src={powerFrame[0]} />
+								<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={powerFrame[0]} />
 					</Link>
 					</div>
 				</div>

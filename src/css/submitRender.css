@@ -1,0 +1,53 @@
+.captured {
+	margin-left: 500px;
+	margin-top: 50px;
+}
+
+
+.captureFrame {
+    position: absolute;
+    /* width: 20%; */
+    height: 100%;
+    top: 70px;
+    left: 0;
+    padding: 20px;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+}
+
+#mail {
+    margin-left: 800px;
+	margin-top: 50px;
+}
+
+
+#image1 {
+	left: 72px;
+    top: 70px;
+    position: absolute;
+    z-index: -10;
+}
+
+
+#image2{
+	left: 72px;
+    top: 530px;
+    position: absolute;
+    z-index: -10;
+}
+
+#image3{
+	left: 72px;
+    top: 990px;
+    position: absolute;
+    z-index: -10;
+}
+
+#image4{
+	left: 72px;
+    top: 1453px;
+    position: absolute;
+    z-index: -10;
+}
+
+

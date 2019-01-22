@@ -5,53 +5,6 @@ width: 100vw;
 height: 100vh;
 }
 
-#webcam {
-position: absolute;
-margin: auto;
-top: 0;
-right: 0;
-bottom: 0;
-left: 0;
-z-index: 10;
-}
-
-#border {
-	position: absolute;
-	margin: auto;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: 10;
- } 
-
-.captureImage {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	background-size: contain !important;
-	background-repeat: no-repeat !important;
-	z-index: -10;
-}
-
-.captureFrame {
-    position: absolute;
-    /* width: 20%; */
-    height: 100%;
-    top: 0;
-    left: 0;
-    /* padding: 20px; */
-    background-repeat: no-repeat !important;
-    background-size: contain !important;
-}
-
-#mission-text h2 {
-	position: absolute;
-	align-items: center;
-	font-size: 72px;
-	z-index: 10;
-}
 #countdown {
 	position: absolute;
     width: 100%;
@@ -65,7 +18,28 @@ z-index: 10;
 	z-index: 10;
 }
 
-.button-div{
+
+.captureImage {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	background-size: contain !important;
+	background-repeat: no-repeat !important;
+	z-index: -10;
+}
+
+
+
+#mission-text h2 {
+	position: absolute;
+	align-items: center;
+	font-size: 72px;
+	z-index: 10;
+}
+
+
+#button-div{ 
 	position: absolute;
     display: flex;
     justify-content: center;
@@ -73,7 +47,7 @@ z-index: 10;
 	bottom: 140px;
 }
 
-.button-div button {
+#button-div button {
 	position: relative;
     width: 50px;
     height: 50px;
@@ -83,88 +57,20 @@ z-index: 10;
     z-index: 10;
 }
 
-
-.photo-container {
-	position: relative;
-}
-
-.final-image {
+#border {
 	position: absolute;
-	width: 15%;
-	height: 25%;
-	/* display: flex; */
-	background-size: contain !important;
-	background-repeat: no-repeat !important;
-	z-index: -10;
-}
-
-
-#mail {
-	margin-left: 500px;
-	margin-top: 50px;
-}
-
-.captured {
-	margin-left: 500px;
-	margin-top: 50px;
-}
-
-#image1 {
-	left: 72px;
-    top: 70px;
-    position: absolute;
+    justify-content: center;
+    justify-items: center;
+    margin: auto;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
     z-index: -10;
 }
 
 
-#image2{
-	left: 72px;
-    top: 530px;
-    position: absolute;
-    z-index: -10;
-}
-
-#image3{
-	left: 72px;
-    top: 990px;
-    position: absolute;
-    z-index: -10;
-}
-
-#image4{
-	left: 72px;
-    top: 1453px;
-    position: absolute;
-    z-index: -10;
-}
-
-.my-gallery-class {
-	-webkit-column-count: 3;
-	-moz-column-count:3;
-	column-count: 6;
-	-webkit-column-gap: 1em;
-	-moz-column-gap: 1em;
-	column-gap: 1em;
-	 margin: 1.5em;
-	  padding: 0;
-	  -moz-column-gap: 1.5em;
-	  -webkit-column-gap: 1.5em;
-	  column-gap: 1.5em;
-	  font-size: .85em;
-
-}
-
-.image-element-class img{max-width:20%;}
-/* .image-frame-class img{max-width:10%;} */
 
 
 
-.frameImage{
-	position: absolute;
-	display: inline-block;
-}
-
-.frameImage img {
-	position: absolute;
-}
 
