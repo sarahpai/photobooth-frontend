@@ -15,7 +15,8 @@ const photoReducer = (state = initialState, action) => {
 			console.log("=====LAST PHOTO BEING TAKEN from PHOTOREDUCER=====");
 			return { ...state, photos: state.photos.concat([action.payload]), frames: state.frames.concat([action.frames]), number_of_remain: 0}
 		case RESET_PHOTOS:
-			return {...initialState}
+			debugger
+			return initialState
 		default:
 			return state
 	}

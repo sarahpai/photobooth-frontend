@@ -2,8 +2,8 @@ import React from 'react'
 import {connect} from 'react-redux';
 import html2canvas from 'html2canvas'
 import '../css/submitRender.css'
-import { submitPhotoAction } from '../actions/photos'
-import { Redirect } from 'react-router-dom'
+import { submitPhotoAction, resetPhotoAction } from '../actions/photos'
+import { Redirect, Link } from 'react-router-dom'
 import Axios from 'axios';
 
 let frame;
@@ -23,10 +23,11 @@ class SubmitRender extends React.Component {
 	newRender = document.querySelector(".captured");
 	images = document.querySelector('.captureFrame')
 		html2canvas(images, { 
-			width: 1200,
-			height: 1200
+			width: 500,
+			height: 800
 		}).then((canvas) => {
 			var dataImage = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
+			newRender.appendChild(canvas)
 			return Axios({
 				method: 'POST',
 				baseURL: `${process.env.REACT_APP_API_ENDPOINT}/api/v1/photos`,
@@ -42,19 +43,18 @@ class SubmitRender extends React.Component {
 				success: function (data) {
 					console.log("upload successful")
 				}
+			}).catch(function (error) {
+				alert(error)
 			})
-		
-		
-		// 	return <Redirect to="/photobooth" />
-		// debugger
-	
-	  })
+		})
+		this.props.resetPhoto()
 	}
 	
 
 	render() {
-		if (this.props.frames == undefined) {
-			console.log("undefined")
+		if (this.props.frames === undefined) {
+			
+		return <Redirect to="/photobooth" />
 		} else {
 
 			frame = this.props.frames.flatMap((f) => {  
@@ -75,10 +75,12 @@ class SubmitRender extends React.Component {
 
 		return (
 			<>
+
 			<div id="mail">
 			<input type="submit" value="Take Screenshot of Div" onClick={(e)=>this.handleSubmit(e)} />
 			<form>
 			<input type="hidden" value=""  />
+	<Link  to="/photobooth"><button type="submit">Let's begin the photobooth</button></Link>
 		
 			</form>
 				</div>
@@ -119,7 +121,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
 	return {
-		submitPhoto: (photo, userId) => {dispatch(submitPhotoAction(photo, userId))}
+		submitPhoto: (photo, userId) => { dispatch(submitPhotoAction(photo, userId)) },
+		resetPhoto: () => dispatch(resetPhotoAction()),
 	}
 }
 export default connect(mapStateToProps, mapDispatchToProps)(SubmitRender);

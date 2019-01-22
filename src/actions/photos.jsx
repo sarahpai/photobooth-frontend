@@ -6,7 +6,10 @@ export const photoCapturedAction = (photo, frame) => {
 }
 
 export const resetPhotoAction = () => {
-  return {type: RESET_PHOTOS}
+  debugger
+  return (dispatch) => {
+    dispatch({ type: RESET_PHOTOS })
+  }
 }
 
 export const submitPhotoAction = (lastPhoto, userId) => {

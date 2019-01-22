@@ -6,6 +6,7 @@ import withAuth from './withAuth'
 import '../css/frameSelect.css'
 import { selectFrame } from '../actions/frames'
 import {minionFrame, powerFrame} from '../constants/Frame.js'
+import { resetPhotoAction } from '../actions/photos'
 
 
 
@@ -37,99 +38,107 @@ class FrameSelect extends React.Component {
 	
 
 	render() {
-		
+		debugger
 		return <>
+			
 		
-			<div className="frame-background">>
+			
+				<div className="frame-background">>
 			<h2 style={{ textAlign: 'center' }}>Select your Frame</h2>
-			<div className="grid">
-				<div className="grid-item">
-					<div className="grid-item-content">
-					<Link to="/photobooth/take">
-								<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={powerFrame[0]} />
-							</Link>
-					</div>
-				</div>
-					<div className="grid-item">
-						<div className="grid-item-content">
-							<Link to="/photobooth/take">
-								<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={powerFrame[0]} />
-							</Link>
+					<div className="grid">
+						<div className="grid-item">
+							<div className="grid-item-content">
+								<Link to="/photobooth/take">
+									<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={powerFrame[0]} />
+								</Link>
+							</div>
 						</div>
-					</div>
-					<div className="grid-item">
-						<div className="grid-item-content">
-							<Link to="/photobooth/take">
-								<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={minionFrame[0]} />
-							</Link>	
+						<div className="grid-item">
+							<div className="grid-item-content">
+								<Link to="/photobooth/take">
+									<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={powerFrame[0]} />
+								</Link>
+							</div>
 						</div>
-					</div>
-				<div className="grid-item">
-					<div className="grid-item-content">
-					<Link to="/photobooth/take">
-								<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={powerFrame[0]} />
-							</Link>
-					</div>
-				</div>
-					<div className="grid-item">
-						<div className="grid-item-content">
-							<Link to="/photobooth/take">
-								<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={powerFrame[0]} />
-							</Link>
+						<div className="grid-item">
+							<div className="grid-item-content">
+								<Link to="/photobooth/take">
+									<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={minionFrame[0]} />
+								</Link>
+							</div>
 						</div>
-					</div>
-					<div className="grid-item">
-						<div className="grid-item-content">
-							<Link to="/photobooth/take">
-								<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={minionFrame[0]} />
-							</Link>	
+						<div className="grid-item">
+							<div className="grid-item-content">
+								<Link to="/photobooth/take">
+									<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={powerFrame[0]} />
+								</Link>
+							</div>
 						</div>
-					</div>
-				<div className="grid-item">
-					<div className="grid-item-content">
-					<Link to="/photobooth/take">
-								<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={powerFrame[0]} />
-							</Link>
-					</div>
-				</div>
-					<div className="grid-item">
-						<div className="grid-item-content">
-							<Link to="/photobooth/take">
-								<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={powerFrame[0]} />
-							</Link>
+						<div className="grid-item">
+							<div className="grid-item-content">
+								<Link to="/photobooth/take">
+									<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={powerFrame[0]} />
+								</Link>
+							</div>
 						</div>
-					</div>
-					<div className="grid-item">
-						<div className="grid-item-content">
-							<Link to="/photobooth/take">
-								<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={minionFrame[0]} />
-							</Link>	
+						<div className="grid-item">
+							<div className="grid-item-content">
+								<Link to="/photobooth/take">
+									<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={minionFrame[0]} />
+								</Link>
+							</div>
 						</div>
-					</div>
-				<div className="grid-item">
-					<div className="grid-item-content">
-					<Link to="/photobooth/take">
-								<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={powerFrame[0]} />
-					</Link>
-					</div>
-				</div>
+						<div className="grid-item">
+							<div className="grid-item-content">
+								<Link to="/photobooth/take">
+									<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={powerFrame[0]} />
+								</Link>
+							</div>
+						</div>
+						<div className="grid-item">
+							<div className="grid-item-content">
+								<Link to="/photobooth/take">
+									<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={powerFrame[0]} />
+								</Link>
+							</div>
+						</div>
+						<div className="grid-item">
+							<div className="grid-item-content">
+								<Link to="/photobooth/take">
+									<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={minionFrame[0]} />
+								</Link>
+							</div>
+						</div>
+						<div className="grid-item">
+							<div className="grid-item-content">
+								<Link to="/photobooth/take">
+									<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={powerFrame[0]} />
+								</Link>
+							</div>
+						</div>
 					
 					
+					</div>
 				</div>
-			</div>
+			
+			
 		</>
 		
 	}
 }
 
 const mapStateToProps = (state) => {
+	console.log("state from FRAMESELECT", state);
+	
 	return {
-		selected_frame: state.frameReducer.selected_frame
+		selected_frame: state.frameReducer.selected_frame,
+		photos: state.photoReducer.photos
 	}
 }
 
 const mapDispatchToProps=(dispatch) => {
 	return {
+		resetPhoto: () => dispatch(resetPhotoAction),
 		selectFrame: (clickedFrame)=> dispatch(selectFrame(clickedFrame))
 	}
 }
