@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import html2canvas from 'html2canvas'
 import '../css/submitRender.css'
 import { submitPhotoAction, resetPhotoAction } from '../actions/photos'
-import { Redirect, Link } from 'react-router-dom'
+import { Redirect, Link, withRouter } from 'react-router-dom'
 import Axios from 'axios';
 
 let frame;
@@ -13,9 +13,9 @@ let images;
 // let base64Img
 class SubmitRender extends React.Component {
 	
-	// componentDidMount() {
-	// base64Img = require('base64-img');
-	// }
+	state = {
+		redirect: false
+	}
 
 
 	handleSubmit = (e) => {	
@@ -26,11 +26,14 @@ class SubmitRender extends React.Component {
 			width: 500,
 			height: 800
 		}).then((canvas) => {
-			var dataImage = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
+			// var dataImage = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
+			var dataImage = canvas.toDataURL()
+			console.log(dataImage);
+			
 			newRender.appendChild(canvas)
 			return Axios({
 				method: 'POST',
-				baseURL: `${process.env.REACT_APP_API_ENDPOINT}/api/v1/photos`,
+				baseURL: `${process.env.REACT_APP_API_ENDPOINT}/api/v1/users/${this.props.user}/photos`,
 				data: {
 					photo: {
 
@@ -47,16 +50,18 @@ class SubmitRender extends React.Component {
 				alert(error)
 			})
 		})
-		this.props.resetPhoto()
+		// this.props.resetPhoto()
+		// this.props.history.push('/homepage')
 	}
 	
 
+	
+
+
 	render() {
 		if (this.props.frames === undefined) {
-			
-		return <Redirect to="/photobooth" />
+			console.log("error")
 		} else {
-
 			frame = this.props.frames.flatMap((f) => {  
 				debugger
 				return (
@@ -79,9 +84,8 @@ class SubmitRender extends React.Component {
 			<div id="mail">
 			<input type="submit" value="Take Screenshot of Div" onClick={(e)=>this.handleSubmit(e)} />
 			<form>
-			<input type="hidden" value=""  />
-	<Link  to="/photobooth"><button type="submit">Let's begin the photobooth</button></Link>
-		
+			<input type="hidden" value="" />
+				<button onClick={this.redirect}>Let's begin the photobooth</button>
 			</form>
 				</div>
 			
@@ -125,4 +129,4 @@ function mapDispatchToProps(dispatch) {
 		resetPhoto: () => dispatch(resetPhotoAction()),
 	}
 }
-export default connect(mapStateToProps, mapDispatchToProps)(SubmitRender);
+export default (withRouter(connect(mapStateToProps, mapDispatchToProps)(SubmitRender)));

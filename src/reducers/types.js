@@ -16,3 +16,8 @@ export const RESET_PHOTOS = "RESET_PHOTOS";
 export const SELECT_FRAME = "SELECT_FRAME";
 export const FRAME_CAPTURED = "FRAME_CAPTURED";
 
+
+// Fetch photos
+
+export const GET_ALL_PHOTO = "GET_ALL_PHOTO";
+export const RECEIVED_ALL_PHOTOS = "RECEIVED_ALL_PHOTOS";
