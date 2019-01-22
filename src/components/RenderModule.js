@@ -11,12 +11,9 @@ class RenderModule extends React.Component {
 
 
     
-	handleSubmit = () => {
-		
+	handleSubmit = () => {	
 	newRender = document.querySelector(".captured");
 	images = document.querySelector('.captureFrame')
-	  
-
 		html2canvas(images, { 
 			width: 1200,
 			height: 1200
@@ -26,7 +23,7 @@ class RenderModule extends React.Component {
 	}
 	
 	render(){
-		frame = this.props.frame.flatMap((f) => {  
+		frame = this.props.frames.flatMap((f) => {  
 			return (
 				f.map((f) => {
 					return f
@@ -72,7 +69,7 @@ class RenderModule extends React.Component {
 function mapStateToProps(state) {
 	return {
 		photos: state.photoReducer.photos,
-		frame: state.photoReducer.frames
+		frames: state.photoReducer.frames
 	}
 }
 

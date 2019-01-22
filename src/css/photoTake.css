@@ -36,14 +36,14 @@ z-index: 10;
 }
 
 .captureFrame {
-	position: absolute;
-	width: 20%;
-	height: 20%;
-	top: 0;
-	left: 0;
-	padding: 20px;
-	background-repeat: no-repeat !important;
-	background-size: contain !important;
+    position: absolute;
+    /* width: 20%; */
+    height: 100%;
+    top: 0;
+    left: 0;
+    /* padding: 20px; */
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
 }
 
 #mission-text h2 {
@@ -59,7 +59,8 @@ z-index: 10;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: red;
+	color: red;
+	background-color: rgba(0,0,0,0.5);
 	font-size: 72px;
 	z-index: 10;
 }
@@ -136,3 +137,34 @@ z-index: 10;
     position: absolute;
     z-index: -10;
 }
+
+.my-gallery-class {
+	-webkit-column-count: 3;
+	-moz-column-count:3;
+	column-count: 6;
+	-webkit-column-gap: 1em;
+	-moz-column-gap: 1em;
+	column-gap: 1em;
+	 margin: 1.5em;
+	  padding: 0;
+	  -moz-column-gap: 1.5em;
+	  -webkit-column-gap: 1.5em;
+	  column-gap: 1.5em;
+	  font-size: .85em;
+
+}
+
+.image-element-class img{max-width:20%;}
+/* .image-frame-class img{max-width:10%;} */
+
+
+
+.frameImage{
+	position: absolute;
+	display: inline-block;
+}
+
+.frameImage img {
+	position: absolute;
+}
+

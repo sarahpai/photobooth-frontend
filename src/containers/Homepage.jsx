@@ -8,7 +8,7 @@ import '../images/lense.png'
 const Homepage = ({username, full_name, email}) => {
 
 	return (
-		<div className="background">
+		<div className="hp-wrapper">
 			<h1 id="title">PHOTO</h1>
 			<br></br>
 			<h1 id="name" >booth app</h1>

@@ -2,16 +2,15 @@
   "name": "photobooth-frontend",
   "version": "0.1.0",
   "private": true,
-  "keywords": [
-    "tracking",
-    "trackingjs",
-    "webrtc"
-  ],
   "dependencies": {
+    "@material-ui/core": "^3.9.0",
     "browserify": "^16.2.3",
     "html2canvas": "^1.0.0-alpha.12",
+    "masonry-layout": "^4.2.2",
+    "materialize-css": "^1.0.0-rc.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-masonry-component": "^6.2.1",
     "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.3",
@@ -22,9 +21,7 @@
     "redux-devtools-extension": "^2.13.7",
     "redux-thunk": "^2.3.0",
     "semantic-ui-react": "^0.84.0",
-    "styled-components": "^4.1.3",
-    "sweetalert": "^2.1.2",
-    "tracking.js": "^0.1.1"
+    "sweetalert": "^2.1.2"
   },
   "scripts": {
     "start": "react-scripts start",

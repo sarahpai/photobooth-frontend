@@ -5,16 +5,64 @@
 	src: local('PIROU'), url(../fonts/Pirou-Regular.otf) format('otf');
 }
 
-#header{
-	color: rgb(69, 87, 85);
-	
+#wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    background: url('../images/login.png') center center no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}	
+
+.form-field [type=text] {
+	color: white;
+}
+.form-field [type=password] {
+	color: white;
 }
 
-#button {
-	background-color:rgba(219, 248,251);
-	font-family: 'PIROU';
+ .inner{
+    background: rgba(94, 93, 93, 0.2);
+    width: 450px;
+    height: 700px;
+    position: absolute;
+    top: 60%;
+    margin-top: -395px;
+    color: #fff;
+    text-align: center;
+    padding: 20px 50px;
+    text-transform: uppercase;
+    left: 50%;
+    margin-left: -225px;
 }
 
-#message {
-	background-color: rgba(252,254,255);
+.names {
+	margin: 130px auto 0;
+    height: 402px;
+}
+
+hr.small {
+    width: 50%;
+    display: block;
+    margin: auto;
+}
+
+h1:first-child {
+	margin-top: 31px;
+	font-weight: 300; 
+	font-size: 3.2rem;
+	line-height: 149%;
+    margin: 33px 0;
+}
+
+h2 {
+	font-size: 2.56rem;
+    line-height: 100%;
+}
+
+
+button:hover {
+    /* line-height: 2.15; */
+	/* margin: 45px; */
+	padding: 0px 40px;
 }

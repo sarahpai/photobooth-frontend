@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import Webcam from 'react-webcam';
 import { connect } from 'react-redux';
 import { photoCapturedAction, resetPhotoAction } from '../actions/photos'
-import PhotoRender from './PhotoRender.jsx'
-import '../css/photobooth.css'
+import '../css/photoTake.css'
 import Frame from './Frame.js'
+import PhotoRender from './PhotoRender.jsx'
 import RenderModule from './RenderModule.js'
 class PhotoTake extends Component {
   constructor(props) {
@@ -16,7 +16,7 @@ class PhotoTake extends Component {
       file: undefined,
       currentStatus: 0,
       frameCount: 1,
-      testing: []
+      photo: []
     }
   }
 
@@ -36,9 +36,8 @@ class PhotoTake extends Component {
   setFrame = () => {
     const frame = this.props.frame.slice(this.state.frameCount - 1, this.state.frameCount)    
     const file = this.state.file
-    this.setState({ currentStatus: 3, testing: [...this.state.testing, { frame: frame[0], image: this.state.file }] })
-   this.props.photoCaptured(file, frame)
-
+    this.setState({ currentStatus: 3, photo: [...this.state.photo, { frame: frame[0], image: this.state.file }] })
+    this.props.photoCaptured(file, frame)
   }
    
   capture = () => {
@@ -62,11 +61,6 @@ class PhotoTake extends Component {
       this.setState({ currentStatus: 0, countdown: 3, frameCount: this.state.frameCount + 1 })
   }
 
-
-  resetPhoto = () => {
-    this.props.resetPhoto()
-  }
- 
 
 
   renderMain = () => {
@@ -116,9 +110,9 @@ class PhotoTake extends Component {
             </div>
 
             <div className="button-div">
-              <button onClick={this.capture} name="button"></button>
+              <button onClick={this.capture} name="photo-button"></button>
             </div>
-              <PhotoRender photo={this.state.testing}/>
+              <PhotoRender />
               </div>
           : <RenderModule />
         }

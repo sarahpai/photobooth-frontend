@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Redirect } from 'react-router';
 import { loginUser } from '../actions/users';
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+// import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 import '../css/loginForm.css'
+import 'materialize-css'
+import 'materialize-css/dist/css/materialize.min.css';
+import 'materialize-css'
+
 class LoginForm extends Component {
 	
 	//use this local state since we do not want to broadcast this info as a global state to redux
@@ -13,11 +17,13 @@ class LoginForm extends Component {
 	}
 
 	handleChange = (event) => {
+		event.preventDefault();
 		this.setState({ [event.target.name]: event.target.value })
 	}
 
 	handleLoginSubmit = (event) => {
 		//this.props.loginUser is coming from action creator & used in connect
+		event.preventDefault();
 		this.props.loginUser(this.state.username, this.state.password);
 		this.setState({ username: "", password: "" })
 	}
@@ -26,45 +32,39 @@ class LoginForm extends Component {
 		return this.props.loggedIn ? (
 			<Redirect to="/homepage" />
 		) : (
-				<Grid textAlign='center' style={{ height: '100%', margin: '15%' }} verticalAlign='middle'>
-				<Grid.Column style={{ maxWidth: 450 }}>
-					<Header id="header" as='h2' textAlign='center'>
-						<Image src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeQa_zYEX4rbL-q4QxOiAqrRF2dI4jW8Fu9B4D0AJHFE8gfC2V' /> Log-in to your account
-					</Header>
-						<Form onSubmit={this.handleLoginSubmit}
-							size='large'
-							loading={this.props.authenticatingUser}
-							error={this.props.failedLogin}
-						>
-						<Message error header={this.props.failedLogin ? this.props.error : null} />
-						<Segment stacked>
-							<Form.Input
-								fluid icon='user'
-								iconPosition='left'
-								placeholder='username'
-								name="username"
-								onChange={this.handleChange}
-								value={this.state.username}
-							/>
-							<Form.Input
-								fluid icon='lock'
-								iconPosition='left'
-								placeholder='Password'
-								type='password'
-								name="password"
-								onChange={this.handleChange}
-								value={this.state.password}
-							/>
-							<Button id='button' fluid size='large'>
-								Login
-							</Button>
-						</Segment>
-						</Form>
-						<Message>
-							New to us? <a href='/signup'>Sign Up</a>
-						</Message>
-					</Grid.Column>
-				</Grid>
+				<div id="wrapper">
+					<div id="start">
+
+						<div className="inner">
+							<div className="names">
+								<hr className="small"></hr>
+								<div>
+									<h1>PhotoBooth</h1>
+									<form onSubmit={this.handleLoginSubmit} className="col s12" >
+										<div className="row">
+										{ !this.props.failedLogin ? null : this.props.error }
+										<div className="form-field col s6">
+										<i className="material-icons prefix">account_circle</i>
+										<input onChange={this.handleChange} value={this.state.username} name="username" id="icon_prefix" type="text" className="validate" />
+										<label htmlFor="icon_prefix">Username</label>
+										</div>
+										
+										<div className="form-field col s6">
+										<i className="material-icons prefix">lock</i>
+										<input  onChange={this.handleChange} value={this.state.password} id="password" type="password" name="password" className="validate"/>
+										<label htmlFor="password">Password</label>
+										</div>
+									</div>
+							     
+								  
+									<button className="btn-large-red">Login</button>
+								</form>
+								</div>
+							</div>
+						</div>
+					</div>
+</div>
+			
 			)
 	}
 } 
