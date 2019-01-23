@@ -6,7 +6,7 @@ import '../css/homepage.css'
 import '../images/lense.png'
  
 
-const Homepage = ({username, full_name, email}) => {
+const Homepage = ({username}) => {
 
 
 	
@@ -23,11 +23,12 @@ const Homepage = ({username, full_name, email}) => {
 	)
 }
 
-const mapStateToProps = ({ userReducer: { user: { username, full_name, email } } }) => ({
-	username,
-	full_name,
-	email
+const mapStateToProps = (state) => ({
+	
+	username: state.userReducer.username,
+	full_name: state.userReducer.full_name,
+	email: state.userReducer.email,
+	images: state.userReducer.photos
 	
 })
-
 export default withAuth(connect(mapStateToProps)(Homepage));

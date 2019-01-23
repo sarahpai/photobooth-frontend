@@ -7,11 +7,15 @@ import power from '../images/vertical-frame.png'
 import rainbow from '../images/filter.png'
 import cartoon from '../images/four image template.jpg'
 
+import comic1 from '../images/red-pop-art-1.png'
+import comic2 from '../images/red-pop-art-2.png'
+
+
 export const minionFrame = [
 	minion1, minion2, minion3, minion4
 ]
 
 export const powerFrame = [
-	rainbow, cartoon, power
+	comic1, comic2, comic1, comic2
 ]
 

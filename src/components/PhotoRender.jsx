@@ -74,7 +74,7 @@ class PhotoRender extends React.Component {
 			return (
 			
 
-					<img alt="frameImage" key={index} src={frame} />
+				<img className="frameImage" alt="frameImage" key={index} style={{ top: `${index * 160}px` }} src={frame} />
 				
 			)
 		})
@@ -82,20 +82,22 @@ class PhotoRender extends React.Component {
 		const imageChild = this.props.photos.map((p, index) => {
 			return (
 		
-				<img className="image" alt="photoImage" key={index} src={p} />
+				<img className="image" alt="photoImage" style={{ top: `${index * 267}px` }} key={index} src={p} />
 			
 			);
 		});
 
 	return (
-			<Masonry
-				className={'my-gallery-class'}
-				// elementType={'ul'}
-				updateOnEachImageLoad={false}
-			>
+			// <Masonry
+			// 	className={'my-gallery-class'}
+			// 	// elementType={'ul'}
+			// 	updateOnEachImageLoad={false}
+			// >
+			<>
 				{frameChild}
-				{imageChild}
-			</Masonry>
+			{imageChild}
+			</>
+			// </Masonry>
 			)
 	}
 

@@ -3,51 +3,109 @@
 	margin-top: 50px;
 }
 
-
-.captureFrame {
-    position: absolute;
-    /* width: 20%; */
-    height: 100%;
-    top: 70px;
-    left: 0;
-    padding: 20px;
-    background-repeat: no-repeat !important;
-    background-size: contain !important;
-}
-
+/* .html2canvas-container { width: 560px !important; height: 1090px !important; } */
 #mail {
     margin-left: 800px;
 	margin-top: 50px;
 }
 
-
-#image1 {
-	left: 72px;
-    top: 70px;
-    position: absolute;
-    z-index: -10;
+.captureFrame {
+    width: 960px;
+    height: 540px;
+}
+.captureFrame > div {
+    display: grid;
+    grid-template-columns: auto auto auto auto ;
+    position: relative;
+    width: 960px;
+    /* height: 480px; */
 }
 
 
+
+.image1 img {
+    top: 0;
+ 
+    position: absolute;
+    height: 270px;
+    width: 480px;
+}
+
+.image2 img {
+    top: 0;
+    left: 480px;
+    position: absolute;
+    height: 270px;
+    width: 480px;
+}
+
+.image3 img {
+    top: 270px;
+   
+    position: absolute;
+    height: 270px;
+    width: 480px;
+}
+
+
+.image4 img {
+    top: 270px;
+    left: 480px;
+    position: absolute;
+    height: 270px;
+    width: 480px
+}
+
+
+/* #image1 { */
+    /* margin-left: -480px; */
+    /* width: 480px !important;
+    height: 270px; */
+/* } */
+
+/* 
 #image2{
-	left: 72px;
-    top: 530px;
-    position: absolute;
     z-index: -10;
-}
+    width: 480px;
+    height: 270px;
+} */
 
-#image3{
-	left: 72px;
-    top: 990px;
-    position: absolute;
+/* #image3{ */
+    /* margin-left: -480px; */
+    /* z-index: -10;
+    width: 480px;
+    height: 270px; */
+/* } */
+
+/* #image4{
     z-index: -10;
-}
+    width: 480px;
+    height: 270px;
+} */
 
-#image4{
-	left: 72px;
-    top: 1453px;
-    position: absolute;
-    z-index: -10;
-}
+/* 
+#frame1 {
+    width: 480px; */
+    /* margin-left: -480px; */
+    /* height: 270px;
+} */
 
 
+/* #frame2{
+    width: 480px; */
+    /* margin-left: -480px; */
+    /* height: 270px; */
+ /* } */
+ 
+ /* #frame3{
+    width: 480px; */
+    /* margin-left: -480px; */
+    /* height: 270px;
+ } */
+ 
+ /* #frame4{ */
+    /* margin-left: -480px; */
+    /* width: 480px;
+    height: 270px;
+ } */
+ 

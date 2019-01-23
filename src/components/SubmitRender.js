@@ -19,17 +19,22 @@ class SubmitRender extends React.Component {
 
 
 	handleSubmit = (e) => {	
-		// debugger
+		debugger
 	newRender = document.querySelector(".captured");
 	images = document.querySelector('.captureFrame')
-		html2canvas(images, { 
-			width: 500,
-			height: 800
+	debugger
+
+	// html2canvas(document.body, {onclone: function(document) {
+	// 	document.querySelector('.something').style.marginLeft = 0;
+	//   }}).then(...)
+		html2canvas(images, {
+			width: 960,
+			height: 540
 		}).then((canvas) => {
-			// var dataImage = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
+			debugger
 			var dataImage = canvas.toDataURL()
 			console.log(dataImage);
-			
+			debugger
 			newRender.appendChild(canvas)
 			return Axios({
 				method: 'POST',
@@ -42,9 +47,11 @@ class SubmitRender extends React.Component {
 						user_id: this.props.user
 					
 					}
+					
 				},
 				success: function (data) {
-					console.log("upload successful")
+					console.log("upload successful", data)
+			
 				}
 			}).catch(function (error) {
 				alert(error)
@@ -63,7 +70,7 @@ class SubmitRender extends React.Component {
 			console.log("error")
 		} else {
 			frame = this.props.frames.flatMap((f) => {  
-				debugger
+				// debugger
 				return (
 					f.map((f) => {
 						return f
@@ -84,20 +91,29 @@ class SubmitRender extends React.Component {
 			<div id="mail">
 			<input type="submit" value="Take Screenshot of Div" onClick={(e)=>this.handleSubmit(e)} />
 			<form>
-			<input type="hidden" value="" />
+						<input type="hidden" value="" />
+					<a href="/gallery">to gallery</a>
 				<button onClick={this.redirect}>Let's begin the photobooth</button>
 			</form>
 				</div>
 			
-				  <div className="captureFrame" >
-						 <img alt="frame1" src={frame[0]} />
-						 <img id="image1" alt="image1" src={imageData[0]}/>
-						 <img alt="frame2" src={frame[1]} />
+				<div className="captureFrame" >
+					<div className="image1">
+						<img id="image1" alt="image1" src={imageData[0]}/>
+						<img id="frame1" alt="frame1" src={frame[0]} />
+					</div>
+					<div className="image2">
 						 <img id="image2" alt="image2" src={imageData[1]}/>
-						 <img alt="frame3" src={frame[2]} />
+						 <img id="frame2" alt="frame2" src={frame[1]} />
+					</div>
+					<div className="image3">
 						 <img id="image3" alt="image3" src={imageData[2]}/>
-						 <img alt="frame4" src={frame[3]} />
+						 <img id="frame3" alt="frame3" src={frame[2]} />
+					</div>
+					<div className="image4">
 						 <img id="image4" alt="image4" src={imageData[3]}/>
+						 <img id="frame4" alt="frame4" src={frame[3]} />
+					</div>
 				 </div>
 			<div className="captured">
 			

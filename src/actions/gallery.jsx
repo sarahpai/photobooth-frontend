@@ -14,11 +14,14 @@ export const fetchAllPhotos = (id) => {
 			
 			}
 		})
-		.then(response => response.text())
+		.then(response => response.json())
 		  .then((JSONResponse) => { 
-			  console.log(JSON.parse(JSONResponse))
-			  debugger
-			//   dispatch({ type: RECEIVED_ALL_PHOTOS, payload: JSONResponse[5].photo})
+			  // console.log(JSON.parse(JSONResponse))
+				debugger
+				let payloadImage = JSONResponse.map((i) => {
+					return i.photo
+				})
+			  dispatch({ type: RECEIVED_ALL_PHOTOS, payload: payloadImage})
 		  })
 	}
 }

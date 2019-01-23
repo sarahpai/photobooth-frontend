@@ -56,7 +56,7 @@ class FrameSelect extends React.Component {
 						<div className="grid-item">
 							<div className="grid-item-content">
 								<Link to="/photobooth/take">
-									<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={powerFrame[0]} />
+									<img alt="frame" onClick={(event) => this.handleClick(event)} name="power" src={powerFrame[0]} />
 								</Link>
 							</div>
 						</div>

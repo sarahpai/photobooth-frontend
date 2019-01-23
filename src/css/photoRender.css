@@ -1,15 +1,14 @@
 .frameImage{
 	display: grid;
-    margin-top: -231px;
+	/* margin-top: -231px; */
+	width: 25%;
 }
 
 
-.image img {
-	/* margin-top: -40px; */
+.image {
 	position: absolute;
-    left: 20px;
-    top: 50px;
     z-index: -10;
+    width: 25%;
 }
 
 .my-gallery-class {
@@ -27,20 +26,28 @@
 	
 }
 
+
+/* 
 .image-class {
 	position: absolute;
-}
+    z-index: -10;
+    width: 25%;
+} */
 
-.image-class img{
+
+/* .frame-class img{
 	max-width:50%;
 	position: relative;
-	z-index: -10;
-}
+} */
 
 
-.frame-class img{
-	max-width:50%;
+/* .captureImage {
 	position: relative;
-}
-
+	width: 25%;
+	/* height: 100%; */
+	/* display: flex;
+	background-size: contain !important;
+	background-repeat: no-repeat !important;
+	z-index: -10; */
+/* } */ 
 

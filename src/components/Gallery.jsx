@@ -12,23 +12,31 @@ class Gallery extends React.Component {
 	}
 
 
-	filterImage = () => {
-		
+	renderOneImage = () => {
+		return this.props.images.map(image => {
+			// debugger
+			return <div>
+				<img alt="gallery" src={image.photo}/>
+			</div>
+			
+		})
 	}
 
 	render() {
-		console.log(this.props.image[0]);
+		console.log("sarah!", this.props.images);
 		
 		const homePage = () => {
 			this.props.history.push('./homepage')
 		}
 	
-	
+	debugger
 	
 		return (
 			<>
+			<a href="/homepage">to homepage</a>
+
 			<h1>Hi from Gallery</h1>
-				<img src={this.props.image[0]} />
+				{this.renderOneImage()}
 			</>
 		)
 		// return (this.props.photos.length < 0 ? <div>
@@ -51,7 +59,7 @@ const mapStateToProps = (state) => {
 	return {
 		photos: state.galleryReducer.photos,
 		user: state.userReducer.user.id,
-		image: state.userReducer.user.photos[6].photo
+		images: state.userReducer.user.photos
 	}
 }
 
