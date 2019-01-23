@@ -1,4 +1,4 @@
-import { GET_ALL_PHOTO, RECEIVED_ALL_PHOTOS } from './types'
+import { GET_ALL_PHOTO, PHOTO_ALL_CAPTURED, RECEIVED_ALL_PHOTOS } from './types'
 
 const initialState = {
 	photos: []
@@ -7,13 +7,12 @@ const initialState = {
 export default function fetchAllPhotos(state = initialState, action) {
 	// console.log('%c photoReducer', 'color: purple', state.photos, action);
 	switch (action.type) {
-		case GET_ALL_PHOTO:
-			debugger
-			return { ...state}
+		case PHOTO_ALL_CAPTURED:
+			return {...state, photos: [...state.photos, action.payload]}
 		case RECEIVED_ALL_PHOTOS:
 			debugger
 			console.log("=====LAST PHOTO BEING TAKEN from PHOTOREDUCER=====");
-			return { ...state, photos: action.payload}
+			return { ...state, photos: [ ...action.payload]}
 		default:
 			return state
 	}

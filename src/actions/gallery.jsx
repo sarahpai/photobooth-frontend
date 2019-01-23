@@ -1,11 +1,11 @@
-import { GET_ALL_PHOTO, RECEIVED_ALL_PHOTOS } from '../reducers/types'
+import { RECEIVED_ALL_PHOTOS } from '../reducers/types'
 
 
 export const fetchAllPhotos = (id) => {
 	// takes the token in localStorage and finds out who it belongs to
 	debugger
 	return (dispatch) => {
-		dispatch({type: GET_ALL_PHOTO})
+		// dispatch({type: GET_ALL_PHOTO})
 		fetch(`${process.env.REACT_APP_API_ENDPOINT}/api/v1/users/${id}/photos`, {
 			method: 'GET',
 			headers: {

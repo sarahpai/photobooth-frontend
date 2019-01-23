@@ -61,7 +61,7 @@ h2 {
 }
 
 
-button:hover {
+.btn:hover {
     /* line-height: 2.15; */
 	/* margin: 45px; */
 	padding: 0px 40px;

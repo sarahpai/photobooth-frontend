@@ -10,53 +10,43 @@ let frame;
 let imageData;
 let newRender;
 let images;
-// let base64Img
 class SubmitRender extends React.Component {
 	
-	state = {
-		redirect: false
-	}
-
 
 	handleSubmit = (e) => {	
-		debugger
 	newRender = document.querySelector(".captured");
 	images = document.querySelector('.captureFrame')
 	debugger
-
-	// html2canvas(document.body, {onclone: function(document) {
-	// 	document.querySelector('.something').style.marginLeft = 0;
-	//   }}).then(...)
-		html2canvas(images, {
+	
+	
+	html2canvas(images, {
 			width: 960,
 			height: 540
 		}).then((canvas) => {
-			debugger
 			var dataImage = canvas.toDataURL()
 			console.log(dataImage);
-			debugger
-			newRender.appendChild(canvas)
-			return Axios({
+			// newRender.appendChild(canvas)
+			this.props.submitPhoto(dataImage, this.props.user)
+			//post to backend with axios
+			Axios({
 				method: 'POST',
 				baseURL: `${process.env.REACT_APP_API_ENDPOINT}/api/v1/users/${this.props.user}/photos`,
 				data: {
-					photo: {
+						photo: {
 
 						photo: dataImage,
 						like: 0,
 						user_id: this.props.user
 					
 					}
-					
+		
 				},
-				success: function (data) {
-					console.log("upload successful", data)
-			
-				}
-			}).catch(function (error) {
-				alert(error)
 			})
-		})
+				.then(data => this.props.history.push('/homepage'))
+		
+	})
+	// this.setState({redirect: true})
+
 		// this.props.resetPhoto()
 		// this.props.history.push('/homepage')
 	}
@@ -66,9 +56,11 @@ class SubmitRender extends React.Component {
 
 
 	render() {
-		if (this.props.frames === undefined) {
-			console.log("error")
-		} else {
+
+		// const {redirect} = this.state
+		// if (redirect) {
+			// console.log("submit render")
+		// } else {
 			frame = this.props.frames.flatMap((f) => {  
 				// debugger
 				return (
@@ -80,9 +72,9 @@ class SubmitRender extends React.Component {
 			console.log(frame);
 		
 			imageData = this.props.photos.map((p)=> {
-				return ( p)
+				return (p)
 			})
-		}
+		// }
 
 
 		return (
@@ -92,8 +84,6 @@ class SubmitRender extends React.Component {
 			<input type="submit" value="Take Screenshot of Div" onClick={(e)=>this.handleSubmit(e)} />
 			<form>
 						<input type="hidden" value="" />
-					<a href="/gallery">to gallery</a>
-				<button onClick={this.redirect}>Let's begin the photobooth</button>
 			</form>
 				</div>
 			

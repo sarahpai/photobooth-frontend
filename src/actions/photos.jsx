@@ -12,35 +12,31 @@ export const resetPhotoAction = () => {
   }
 }
 
-export const submitPhotoAction = (lastPhoto, userId) => {
+export const submitPhotoAction = (lastPhoto) => {
   debugger
-  return (dispatch) => {
-    dispatch({ type: PHOTO_ALL_CAPTURED })
-    debugger
-    return Axios({
-      method: 'POST',
-      baseURL: `${process.env.REACT_APP_API_ENDPOINT}/api/v1/photos`,
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("jwt")}`,
-        "Content-Type": "image/png",
-        Accept: "application/json",
-      },
-      data: {
-        photo: {
-          photo: lastPhoto,
-          user_id: userId
-        }
-      }
-    })
-      .then(r => {
-        debugger
-        dispatch({ type: PHOTO_ALL_CAPTURED, payload: r.data })
-        debugger
+  // return (dispatch) => {
+    return (dispatch )=> (dispatch({ type: PHOTO_ALL_CAPTURED, payload: lastPhoto }))
+    
+    // return Axios({
+    //   method: 'POST',
+    //   baseURL: `${process.env.REACT_APP_API_ENDPOINT}/api/v1/users/${userId}/photos`,
+      
+    //   data: {
+    //     photo: {
+    //       photo: lastPhoto,
+    //       user_id: userId
+    //     }
+    //   }
+    // })
+      // .then(r => {
+        
+        // dispatch({ type: PHOTO_ALL_CAPTURED, payload: r.data })
+       
         // console.log("response is",r );
         
-      })
+      // })
   }
-}
+// }
 
 
 export const fetchAllPhotos = () => {

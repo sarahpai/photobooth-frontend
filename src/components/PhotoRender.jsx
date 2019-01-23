@@ -7,57 +7,6 @@ import Masonry from 'react-masonry-component';
 
 
 class PhotoRender extends React.Component {
-	// console.log(props.photos, props.frames);
-	
-	
-	// const handleSubmit = (e) => {
-	// 	// console.log(e.target);
-	// 	props.resetPhoto()
-
-	// }
-
-	// const frame = props.frames.flatMap((f) => {  
-	// 	return (
-	// 		f.map((f, index) => {
-	// 			return (f , index)
-	// 		})
-	// 	)
-	// })
-	// console.log(frame);
-
-	// const imageData = props.photos.map((p)=> {
-	// 	return ( p)
-	// })
-
-	// {props.photo.map((p, index) => {
-	// 	return (
-	// 			<div key={index} className="captureFrame" style={{ top: `${index * 160}px`, background: `url(${p.frame})` }}>
-	// 				<div key={index} className="captureImage" style={{ background: `url(${p.image})` }}>
-	// 				</div>
-	// 			</div>
-	// 		)
-	// 	})
-	// }
-	
-	// const childElements = this.props.photos.map((p, index) => {
-	// 	return (
-	// 			<li className="image-element-class">
-	// 				<img alt="file"  key={index} src={p} />
-	// 			</li>
-	// 		)
-	// 	})
-		
-	// 	const childFrames = frame.map((f, index) => {
-	// 		return (
-	// 			<li className="image-frame-class">
-	// 			<img alt="frame" key={index} src={f} />
-	// 			</li>
-	// 	)
-	// })
-
-	
-		
-		
 
 	render() {
 		console.log(this.props);
@@ -74,7 +23,7 @@ class PhotoRender extends React.Component {
 			return (
 			
 
-				<img className="frameImage" alt="frameImage" key={index} style={{ top: `${index * 160}px` }} src={frame} />
+				<img className="frameImage" alt="frameImage" key={index}  src={frame} />
 				
 			)
 		})
@@ -82,7 +31,7 @@ class PhotoRender extends React.Component {
 		const imageChild = this.props.photos.map((p, index) => {
 			return (
 		
-				<img className="image" alt="photoImage" style={{ top: `${index * 267}px` }} key={index} src={p} />
+				<img className="image" alt="photoImage" style={{ top: `${index * 261.34}px` }} key={index} src={p} />
 			
 			);
 		});
@@ -93,9 +42,12 @@ class PhotoRender extends React.Component {
 			// 	// elementType={'ul'}
 			// 	updateOnEachImageLoad={false}
 			// >
-			<>
+		<>
+			<div className="photo-container">
+
 				{frameChild}
 			{imageChild}
+			</div>
 			</>
 			// </Masonry>
 			)

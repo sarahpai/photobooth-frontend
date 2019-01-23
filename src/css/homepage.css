@@ -21,9 +21,9 @@
 	font-family: 'PIROU';
 	color: rgb(69, 87, 85);
 	text-align: center;
-	margin-top: 15%;
-	/* margin-left: 5%; */
-	position: relative;
+	top: 25%;
+	margin-left: 39%;
+	position: absolute;
 	font-size: 100px;
 }
 
@@ -32,8 +32,8 @@
 	font-family: 'Josefin Slab';
 	font-style: serif;
 	font-weight: 'light';
-	margin-top: -4%;
-	margin-left: 45%;
+	top: 40%;
+	left: 45.5%;
 	position: absolute;
 	font-size: 30px;
 }
@@ -47,14 +47,21 @@
 	font-family: 'Josefin Slab';
 	font-style: serif;
 	font-weight: 'light';
-	margin-top: 0%;
-	margin-left: 41%;
+	top: 20%;
+	left: 42%;
+
 	position: absolute;
 	font-size: 30px;
 }
 
 #button-image {
-	margin-top: 5%;
-	margin-left: 45rem;
+	top: 60%;
+	left: 52rem;
+	position: absolute;
+}
+
+#gallery-button {
+	top: 60%;
+	left: 68rem;
 	position: absolute;
 }

@@ -31,9 +31,13 @@
  }
 
 
-  .grid-item:hover .grid-item-content {
+  .grid-item:hover  {
 	border-color: white;
 	background: rgb(206, 188, 211);
 	cursor: pointer;
 	
+  }
+
+  .grid-item {
+	max-height: 122px;
   }

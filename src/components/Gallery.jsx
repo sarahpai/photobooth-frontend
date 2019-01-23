@@ -2,8 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import withAuth from './withAuth'
-import EmptyGallery from './EmptyGallery.jsx'
-import {fetchAllPhotos} from '../actions/gallery'
+import { fetchAllPhotos } from '../actions/gallery'
+import '../css/gallery.css'
 class Gallery extends React.Component {
 	
 
@@ -13,17 +13,17 @@ class Gallery extends React.Component {
 
 
 	renderOneImage = () => {
-		return this.props.images.map(image => {
+		return this.props.photos.map(image => {
 			// debugger
-			return <div>
-				<img alt="gallery" src={image.photo}/>
+			return <div className="image-container">
+				<img alt="gallery" src={image}/>
 			</div>
 			
 		})
 	}
 
 	render() {
-		console.log("sarah!", this.props.images);
+		console.log("sarah!", this.props);
 		
 		const homePage = () => {
 			this.props.history.push('./homepage')
@@ -55,11 +55,13 @@ class Gallery extends React.Component {
 
 
 const mapStateToProps = (state) => {
+	
 	console.log('%c inside gallery', 'color:green', state)
 	return {
 		photos: state.galleryReducer.photos,
 		user: state.userReducer.user.id,
-		images: state.userReducer.user.photos
+		images: state.userReducer.user.photos,
+		// finalImage: state.photoReducer.photos
 	}
 }
 
