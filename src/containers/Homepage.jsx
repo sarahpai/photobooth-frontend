@@ -12,13 +12,13 @@ const Homepage = ({username}) => {
 	
 	return (
 		<div className="hp-wrapper">
-			<h3 id="username">Welcome {username}</h3>
+			<h3 id="username">Welcome {username} to</h3>
 			<br></br>
-			<h1 id="title">PHOTO</h1>
+			<h1 id="title">React</h1>
 			<br></br>
-			<h1 id="name" >booth app</h1>
-			<Link id="button-image" to="/photobooth"><button type="submit">Let's begin the photobooth</button></Link>
-			<Link id="gallery-button" to="/gallery"><button type="submit">gallery</button></Link>
+			<h1 id="name" >booth</h1>
+			<a className="waves-effect waves-light btn  black" href="/photobooth"><i className="material-icons left">camera_roll</i>Take photos</a>
+			<a className="waves-effect waves-light btn blue-grey darken-2" href="/gallery"><i className="material-icons left">photo_library</i>Gallery</a>
 		</div>
 	)
 }

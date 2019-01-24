@@ -16,40 +16,45 @@
     min-height: 100vh;
 }	
 
+.hp-wrapper a {
+	margin: 0 auto;
+	position: absolute;
+	left: 45%;
+	top: 55%;
+	/* overflow: hidden; */
+	/* margin-right: 50px !important; */
+}
 
 #title {
 	font-family: 'PIROU';
-	color: rgb(69, 87, 85);
+	color: rgb(85, 85, 85);
 	text-align: center;
 	top: 25%;
-	margin-left: 39%;
+	margin-left: 42%;
 	position: absolute;
 	font-size: 100px;
 }
 
 #name{
-	color:  rgb(69, 87, 85);
+	color:  rgb(91, 91, 91);
 	font-family: 'Josefin Slab';
 	font-style: serif;
 	font-weight: 'light';
 	top: 40%;
-	left: 45.5%;
+	left: 48%;
 	position: absolute;
 	font-size: 30px;
 }
 
-.email {
-	color: #ffbd4a;
-}
+
 
 #username {
-	color:  rgb(69, 87, 85);
+	color:  rgb(85, 85, 85);
 	font-family: 'Josefin Slab';
 	font-style: serif;
 	font-weight: 'light';
 	top: 20%;
 	left: 42%;
-
 	position: absolute;
 	font-size: 30px;
 }

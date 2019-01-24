@@ -5,11 +5,16 @@
 
 /* .html2canvas-container { width: 560px !important; height: 1090px !important; } */
 #mail {
-    margin-left: 800px;
-	margin-top: 50px;
+    left: 45%;
+    top: 70%;
+    position: relative;
 }
 
+
+
+
 .captureFrame {
+
     width: 960px;
     height: 540px;
     margin: auto;
@@ -59,56 +64,3 @@
     width: 480px
 }
 
-
-/* #image1 { */
-    /* margin-left: -480px; */
-    /* width: 480px !important;
-    height: 270px; */
-/* } */
-
-/* 
-#image2{
-    z-index: -10;
-    width: 480px;
-    height: 270px;
-} */
-
-/* #image3{ */
-    /* margin-left: -480px; */
-    /* z-index: -10;
-    width: 480px;
-    height: 270px; */
-/* } */
-
-/* #image4{
-    z-index: -10;
-    width: 480px;
-    height: 270px;
-} */
-
-/* 
-#frame1 {
-    width: 480px; */
-    /* margin-left: -480px; */
-    /* height: 270px;
-} */
-
-
-/* #frame2{
-    width: 480px; */
-    /* margin-left: -480px; */
-    /* height: 270px; */
- /* } */
- 
- /* #frame3{
-    width: 480px; */
-    /* margin-left: -480px; */
-    /* height: 270px;
- } */
- 
- /* #frame4{ */
-    /* margin-left: -480px; */
-    /* width: 480px;
-    height: 270px;
- } */
- 

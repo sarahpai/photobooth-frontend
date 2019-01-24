@@ -3,7 +3,7 @@ import React from 'react'
 const Frame = (props) => {
 	return (
 		<img
-		id="border"
+		id="webcam-frame"
 		alt="images"
 		src={props.frame}
 		/>

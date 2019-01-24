@@ -80,11 +80,14 @@ class SubmitRender extends React.Component {
 		return (
 			<>
 
-			<div id="mail">
-			<input type="submit" value="Take Screenshot of Div" onClick={(e)=>this.handleSubmit(e)} />
+				<div id="mail">
+				<button className="btn waves-effect waves-light black" type="submit" name="action" onClick={(e)=>this.handleSubmit(e)}>Save to Gallery
+					<i className="material-icons right">send</i>
+				</button>
+			{/* <button type="submit" value="Save to gallery" onClick={(e)=>this.handleSubmit(e)} />
 			<form>
 						<input type="hidden" value="" />
-			</form>
+			</form> */}
 				</div>
 			
 				<div className="captureFrame" >

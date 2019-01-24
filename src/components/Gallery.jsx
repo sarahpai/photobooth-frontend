@@ -25,16 +25,12 @@ class Gallery extends React.Component {
 	render() {
 		console.log("sarah!", this.props);
 		
-		const homePage = () => {
-			this.props.history.push('./homepage')
-		}
 	
 	debugger
 	
 		return (
 			<>
-			<a href="/homepage">to homepage</a>
-
+			<a class="waves-effect waves-light btn" href="/homepage"><i class="material-icons left">cloud</i>To homepage</a>
 			<h1>Hi from Gallery</h1>
 				{this.renderOneImage()}
 			</>

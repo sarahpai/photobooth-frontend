@@ -98,22 +98,25 @@ class PhotoTake extends Component {
     return (
       <>
         {this.props.number > 0 ?
-          <div> 
-          {this.renderMain()}
+          <div className="photobooth-container"> 
+            {this.renderMain()}
             <div>
               {this.renderFrames()}
+              <div className="webcam-container">
+
             <Webcam
               style={videoConstraints}
               ref={this.setRef}
               audio={false}
-              />
+                />
+                </div>
             </div>
 
             <div id="button-div">
               <button onClick={this.capture} name="photo-button"></button>
             </div>
               <PhotoRender />
-              </div>
+            </div>
           : <SubmitRender />
         }
       </>

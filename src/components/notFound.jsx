@@ -4,7 +4,7 @@ import React, { Fragment } from 'react'
 const NotFound = () => (
   <Fragment>
       Page Not Found lol
-    <img alt="not-found" src="https://thumbs.dreamstime.com/z/senior-man-shrugging-his-shoulders-8775727.jpg" />
+    <img alt="not-found" src="http://i65.tinypic.com/35kpz07.jpg" style={{ backgroundSize: 'cover'}} />
   </Fragment>
 )
 

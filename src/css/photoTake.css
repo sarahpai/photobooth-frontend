@@ -5,6 +5,20 @@ width: 100vw;
 height: 100vh;
 }
 
+.photobooth-container {
+    background-color: rgba(0,0,0);
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 10;
+}
+
+
+.webcam-container {
+
+}
+
+
 #countdown {
 	position: absolute;
     width: 100%;
@@ -18,23 +32,12 @@ height: 100vh;
 	z-index: 20;
 }
 
-
-
-
-#mission-text h2 {
-	position: absolute;
-	align-items: center;
-	font-size: 72px;
-	z-index: 10;
-}
-
-
 #button-div{ 
 	position: absolute;
     display: flex;
     justify-content: center;
     width: 100%;
-	bottom: 140px;
+	bottom: 200px;
 }
 
 #button-div button {
@@ -42,12 +45,12 @@ height: 100vh;
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: rgb(245, 231, 231);
-    bottom: 8%;
+    background-color: rgb(145, 145, 145);
+    bottom: 12%;
     z-index: 10;
 }
 
-#border {
+#webcam-frame {
 	position: absolute;
     justify-content: center;
     justify-items: center;

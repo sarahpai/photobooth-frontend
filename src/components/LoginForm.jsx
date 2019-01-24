@@ -39,7 +39,7 @@ class LoginForm extends Component {
 							<div className="names">
 								<hr className="small"></hr>
 								<div>
-									<h1>PhotoBooth</h1>
+									<h1>React Booth</h1>
 									<form onSubmit={this.handleLoginSubmit} className="col s12" >
 										<div className="row">
 										{ !this.props.failedLogin ? null : this.props.error }
@@ -57,7 +57,7 @@ class LoginForm extends Component {
 									</div>
 							     
 								  
-									<button className="btn">Login</button>
+									<button className="btn black">Login</button>
 								</form>
 								</div>
 							</div>
