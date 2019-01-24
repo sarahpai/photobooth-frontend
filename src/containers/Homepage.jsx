@@ -16,9 +16,13 @@ const Homepage = ({username}) => {
 			<br></br>
 			<h1 id="title">React</h1>
 			<br></br>
-			<h1 id="name" >booth</h1>
+			<h1 id="name" >Booth</h1>
+			<div className="row">
+			<a className="waves-effect waves-light btn blue-grey darken-2" href="/gallery" style={{marginLeft: "20px"}} ><i className="material-icons left">photo_library</i>Gallery</a>
+			</div>
+			<div className="row">
 			<a className="waves-effect waves-light btn  black" href="/photobooth"><i className="material-icons left">camera_roll</i>Take photos</a>
-			<a className="waves-effect waves-light btn blue-grey darken-2" href="/gallery"><i className="material-icons left">photo_library</i>Gallery</a>
+			</div>
 		</div>
 	)
 }

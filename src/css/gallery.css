@@ -1,4 +1,4 @@
-.image-container  {
+.image-container {
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 	transition: 0.3s;
 	margin: auto;
@@ -12,4 +12,14 @@
 
 .image-container:hover {
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+  #background {
+	position: relative;
+    overflow: hidden;
+    background: url('../images/kelly-sikkema-273133-unsplash.jpg') center center no-repeat;
+    background-size: cover;
+    /* min-height: 1080px;; */
+	/* max-width: 1920px; */
+	z-index: 10;
   }

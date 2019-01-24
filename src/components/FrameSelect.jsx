@@ -73,7 +73,7 @@ class FrameSelect extends React.Component {
 								</Link>
 							</div>
 						</div>
-						<div className="grid-item">
+						{/* <div className="grid-item">
 							<div className="grid-item-content">
 								<Link to="/photobooth/take">
 									<img alt="frame" onClick={(event) => this.handleClick(event)} name="comic" src={comicFrame[0]} />
@@ -100,7 +100,7 @@ class FrameSelect extends React.Component {
 									<img alt="frame" onClick={(event) => this.handleClick(event)} name="cartoon" src={comicFrame[0]} />
 								</Link>
 							</div>
-						</div>
+						</div> */}
 
 					</div>
 				</div>

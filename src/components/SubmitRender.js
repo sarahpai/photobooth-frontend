@@ -16,8 +16,6 @@ class SubmitRender extends React.Component {
 	handleSubmit = (e) => {	
 	newRender = document.querySelector(".captured");
 	images = document.querySelector('.captureFrame')
-	debugger
-	
 	
 	html2canvas(images, {
 			width: 960,
@@ -27,7 +25,7 @@ class SubmitRender extends React.Component {
 			console.log(dataImage);
 			// newRender.appendChild(canvas)
 			this.props.submitPhoto(dataImage, this.props.user)
-			//post to backend with axios
+			//post to backend with axios, since its async render here
 			Axios({
 				method: 'POST',
 				baseURL: `${process.env.REACT_APP_API_ENDPOINT}/api/v1/users/${this.props.user}/photos`,
@@ -57,10 +55,6 @@ class SubmitRender extends React.Component {
 
 	render() {
 
-		// const {redirect} = this.state
-		// if (redirect) {
-			// console.log("submit render")
-		// } else {
 			frame = this.props.frames.flatMap((f) => {  
 				// debugger
 				return (
@@ -74,21 +68,12 @@ class SubmitRender extends React.Component {
 			imageData = this.props.photos.map((p)=> {
 				return (p)
 			})
-		// }
-
+	
 
 		return (
 			<>
-
-				<div id="mail">
-				<button className="btn waves-effect waves-light black" type="submit" name="action" onClick={(e)=>this.handleSubmit(e)}>Save to Gallery
-					<i className="material-icons right">send</i>
-				</button>
-			{/* <button type="submit" value="Save to gallery" onClick={(e)=>this.handleSubmit(e)} />
-			<form>
-						<input type="hidden" value="" />
-			</form> */}
-				</div>
+			<div id="background">
+					
 			
 				<div className="captureFrame" >
 					<div className="image1">
@@ -107,11 +92,15 @@ class SubmitRender extends React.Component {
 						 <img id="image4" alt="image4" src={imageData[3]}/>
 						 <img id="frame4" alt="frame4" src={frame[3]} />
 					</div>
-				 </div>
+					</div>
+					<div id="save">
+				<button className="btn waves-effect waves-light black" type="submit" name="action" onClick={(e)=>this.handleSubmit(e)}>Save to Gallery
+					<i className="material-icons right">send</i>
+				</button>
+				</div>
 			<div className="captured">
-			
 			</div>
-
+		</div>
 			</>
 			  )
 		}

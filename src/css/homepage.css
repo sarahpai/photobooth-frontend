@@ -17,12 +17,8 @@
 }	
 
 .hp-wrapper a {
-	margin: 0 auto;
-	position: absolute;
 	left: 45%;
-	top: 55%;
-	/* overflow: hidden; */
-	/* margin-right: 50px !important; */
+	top: 450px;
 }
 
 #title {
@@ -40,10 +36,10 @@
 	font-family: 'Josefin Slab';
 	font-style: serif;
 	font-weight: 'light';
-	top: 40%;
-	left: 48%;
+	top: 37%;
+	left: 45%;
 	position: absolute;
-	font-size: 30px;
+	font-size: 70px;
 }
 
 
@@ -54,9 +50,9 @@
 	font-style: serif;
 	font-weight: 'light';
 	top: 20%;
-	left: 42%;
+	left: 38%;
 	position: absolute;
-	font-size: 30px;
+	font-size: 50px;
 }
 
 #button-image {
