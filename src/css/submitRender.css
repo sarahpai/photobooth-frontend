@@ -38,14 +38,16 @@
     /* height: 480px; */
 }
 
-
+.rotate {
+    transform: rotateY(180deg);
+}
 
 .image1 img {
     top: 0;
- 
     position: absolute;
     height: 270px;
     width: 480px;
+    
 }
 
 .image2 img {

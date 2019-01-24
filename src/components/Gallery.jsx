@@ -46,11 +46,20 @@ class Gallery extends React.Component {
 
 		return (
 			<>
-			<div id="background">
+				{/* <div className="grid">
+					<div className="grid-sizer">
+						<div className="grid-item grid-item--width2">
+						
+						
+						</div>
+					
+					</div>
+
+			</div> */}
 					
 			<a className="waves-effect waves-light btn black" href="/homepage"><i class="material-icons left">cloud</i>Homepage</a>
 			{this.renderOneImage()}
-			</div>
+			
 		</>);
 	}
 }

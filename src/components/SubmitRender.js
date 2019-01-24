@@ -77,19 +77,19 @@ class SubmitRender extends React.Component {
 			
 				<div className="captureFrame" >
 					<div className="image1">
-						<img id="image1" alt="image1" src={imageData[0]}/>
+						<img id="image1" className="rotate" alt="image1" src={imageData[0]}/>
 						<img id="frame1" alt="frame1" src={frame[0]} />
 					</div>
 					<div className="image2">
-						 <img id="image2" alt="image2" src={imageData[1]}/>
+						 <img id="image2" className="rotate" alt="image2" src={imageData[1]}/>
 						 <img id="frame2" alt="frame2" src={frame[1]} />
 					</div>
 					<div className="image3">
-						 <img id="image3" alt="image3" src={imageData[2]}/>
+						 <img id="image3" className="rotate" alt="image3" src={imageData[2]}/>
 						 <img id="frame3" alt="frame3" src={frame[2]} />
 					</div>
 					<div className="image4">
-						 <img id="image4" alt="image4" src={imageData[3]}/>
+						 <img id="image4" className="rotate" alt="image4" src={imageData[3]}/>
 						 <img id="frame4" alt="frame4" src={frame[3]} />
 					</div>
 					</div>
