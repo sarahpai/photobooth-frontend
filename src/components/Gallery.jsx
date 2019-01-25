@@ -16,7 +16,7 @@ class Gallery extends React.Component {
 			debugger
 			return <div className="image-container">
 				<img alt="gallery" src={image} />
-				<a className="waves-effect waves-light btn black" id="btn-download" href="#" onClick={()=>this.downloadImage(image)} ><i class="material-icons left">cloud</i>Download</a>
+				<a className="waves-effect waves-light btn black" id="btn-download" href="" onClick={()=>this.downloadImage(image)} ><i class="material-icons left">cloud</i>Download</a>
 			</div>;
 		});
 		

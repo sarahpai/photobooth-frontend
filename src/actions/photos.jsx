@@ -1,5 +1,5 @@
 import {PHOTO_CAPTURED, PHOTO_ALL_CAPTURED, RESET_PHOTOS} from '../reducers/types'
-import Axios from 'axios';
+// import Axios from 'axios';
 
 export const photoCapturedAction = (photo, frame) => {
   return { type: PHOTO_CAPTURED, photo: photo, frames: frame}

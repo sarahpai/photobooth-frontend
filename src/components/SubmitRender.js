@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import html2canvas from 'html2canvas'
 import '../css/submitRender.css'
 import { submitPhotoAction, resetPhotoAction } from '../actions/photos'
-import { Redirect, Link, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import Axios from 'axios';
 
 let frame;

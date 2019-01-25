@@ -1,4 +1,4 @@
-import { GET_ALL_PHOTO, PHOTO_ALL_CAPTURED, RECEIVED_ALL_PHOTOS } from './types'
+import { PHOTO_ALL_CAPTURED, RECEIVED_ALL_PHOTOS } from './types'
 
 const initialState = {
 	photos: []

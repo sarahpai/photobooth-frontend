@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import withAuth from '../components/withAuth'
 import '../css/homepage.css'

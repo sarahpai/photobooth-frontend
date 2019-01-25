@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import { resetPhotoAction } from '../actions/photos'
 import '../css/photoRender.css'
 
-import Masonry from 'react-masonry-component';
+// import Masonry from 'react-masonry-component';
 
 
 class PhotoRender extends React.Component {
