@@ -21,7 +21,7 @@ class SubmitRender extends React.Component {
 			width: 960,
 			height: 540
 		}).then((canvas) => {
-			var dataImage = canvas.toDataURL()
+			var dataImage = canvas.toDataURL('image/jpg')
 			console.log(dataImage);
 			// newRender.appendChild(canvas)
 			this.props.submitPhoto(dataImage, this.props.user)

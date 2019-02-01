@@ -15,9 +15,9 @@ class Gallery extends React.Component {
 		return this.props.photos.map(image => {
 			debugger
 			return <div className="image-container">
-				<img alt="gallery" src={image} />
+				<img alt="gallery" src={image} style={{width: 960}}/>
 				<a className="waves-effect waves-light btn black" id="btn-download" href="" onClick={()=>this.downloadImage(image)} ><i class="material-icons left">cloud</i>Download</a>
-			</div>;
+			</div>
 		});
 		
 	};
