@@ -8,6 +8,7 @@ import Axios from 'axios';
 
 let frame;
 let imageData;
+// eslint-disable-next-line no-unused-vars
 let newRender;
 let images;
 class SubmitRender extends React.Component {
