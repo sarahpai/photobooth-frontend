@@ -9,7 +9,7 @@ ReactBooth is a fun and interactive photo booth app.
 	* take photos 
 	* see the photos being taken on the side
 	* see their photo collage with the selected template
-	* save the photo onto their local computer
+	* download the photo onto their local computer
 
 ---
 
@@ -33,14 +33,12 @@ ReactBooth is a fun and interactive photo booth app.
 * Styling
 	* Materialize CSS
 	* Custom CSS
-	* 
+	
 
 ---
 
 ## Wire-Frames
-[Model Association](https://www.draw.io/#G16RyUeySFma0EeZKmAUXsKsVfCnvpitQw)
-
-[Design Prototype](https://xd.adobe.com/view/be596e97-eed8-49d8-7052-5f7f6c8bc1fa-c868/)
+[Demo](https://www.youtube.com/watch?v=LEpe4KuZbeA)
 
 
 
