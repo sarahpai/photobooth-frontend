@@ -25,8 +25,8 @@
 	font-family: 'PIROU';
 	color: rgb(85, 85, 85);
 	text-align: center;
-	top: 40%;
-	margin-left: 42%;
+	top: 35%;
+	left: 40%;
 	position: absolute;
 	font-size: 100px;
 }
@@ -36,33 +36,31 @@
 	font-family: 'Josefin Slab';
 	font-style: serif;
 	font-weight: 'light';
-	top: 55%;
-	left: 45%;
+	top: 50%;
+	left: 44%;
 	position: absolute;
 	font-size: 70px;
 }
 
-
-
-#username {
+#welcome {
 	color:  rgb(85, 85, 85);
 	font-family: 'Josefin Slab';
 	font-style: serif;
 	font-weight: 'light';
 	top: 32%;
-	left: 38%;
+	left: 37%;
 	position: absolute;
 	font-size: 50px;
 }
 
-#button-image {
+#button-take {
 	top: 70%;
-	left: 52rem;
+	left: 37%;
 	position: absolute;
 }
 
 #gallery-button {
 	top: 70%;
-	left: 65rem;
+	left: 51%;
 	position: absolute;
 }

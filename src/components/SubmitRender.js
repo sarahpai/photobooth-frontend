@@ -9,13 +9,13 @@ import Axios from 'axios';
 let frame;
 let imageData;
 // eslint-disable-next-line no-unused-vars
-let newRender;
+// let newRender;
 let images;
 class SubmitRender extends React.Component {
 	
 
 	handleSubmit = (e) => {	
-	newRender = document.querySelector(".captured");
+	// newRender = document.querySelector(".captured");
 	images = document.querySelector('.captureFrame')
 	
 	html2canvas(images, {
@@ -24,7 +24,6 @@ class SubmitRender extends React.Component {
 		}).then((canvas) => {
 			var dataImage = canvas.toDataURL('image/jpg')
 			console.log(dataImage);
-			// newRender.appendChild(canvas)
 			this.props.submitPhoto(dataImage, this.props.user)
 			//post to backend with axios, since its async render here
 			Axios({
@@ -74,8 +73,6 @@ class SubmitRender extends React.Component {
 		return (
 			<>
 			<div id="background">
-					
-			
 				<div className="captureFrame" >
 					<div className="image1">
 						<img id="image1" className="rotate" alt="image1" src={imageData[0]}/>
@@ -93,15 +90,13 @@ class SubmitRender extends React.Component {
 						 <img id="image4" className="rotate" alt="image4" src={imageData[3]}/>
 						 <img id="frame4" alt="frame4" src={frame[3]} />
 					</div>
-					</div>
 					<div id="save">
-				<button className="btn waves-effect waves-light black" type="submit" name="action" onClick={(e)=>this.handleSubmit(e)}>Save to Gallery
-					<i className="material-icons right">send</i>
-				</button>
+					  <button className="btn waves-effect waves-light black" type="submit" name="action" onClick={(e)=>this.handleSubmit(e)}>Save to Gallery
+						<i className="material-icons right">send</i>
+					  </button>
+					</div>
 				</div>
-			<div className="captured">
 			</div>
-		</div>
 			</>
 			  )
 		}

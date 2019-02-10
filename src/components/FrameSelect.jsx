@@ -43,35 +43,35 @@ class FrameSelect extends React.Component {
 	render() {
 		return <>
 				<div className="frame-background">
-			<h2 style={{ textAlign: 'center', marginTop: 150 }}>Select your Frame</h2>
+				  <h2 style={{ textAlign: 'center', marginTop: 150 }}>Select your Frame</h2>
 					<div className="grid">
 						<div className="grid-item">
-							<div className="grid-item-content">
+							{/* <div className="grid-item-content"> */}
 								<Link to="/photobooth/take">
 									<img alt="frame" onClick={(event) => this.handleClick(event)} name="comic" src={comicFrame[0]} />
 								</Link>
-							</div>
+							{/* </div> */}
 						</div>
 						<div className="grid-item">
-							<div className="grid-item-content">
+							{/* <div className="grid-item-content"> */}
 								<Link to="/photobooth/take">
 									<img alt="frame" onClick={(event) => this.handleClick(event)} name="minion" src={minionFrame[0]} />
 								</Link>
-							</div>
+							{/* </div> */}
 						</div>
 						<div className="grid-item">
-							<div className="grid-item-content">
+							{/* <div className="grid-item-content"> */}
 								<Link to="/photobooth/take">
 									<img alt="frame" onClick={(event) => this.handleClick(event)} name="ali" src={aliFrame[0]} />
 								</Link>
-							</div>
+							{/* </div> */}
 						</div>
 						<div className="grid-item">
-							<div className="grid-item-content">
+							{/* <div className="grid-item-content"> */}
 								<Link to="/photobooth/take">
 									<img alt="frame" onClick={(event) => this.handleClick(event)} name="waldo" src={waldoFrame[0]} />
 								</Link>
-							</div>
+							{/* </div> */}
 						</div>
 						{/* <div className="grid-item">
 							<div className="grid-item-content">

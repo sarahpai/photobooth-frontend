@@ -31,7 +31,7 @@ class PhotoRender extends React.Component {
 		const imageChild = this.props.photos.map((p, index) => {
 			return (
 		
-				<img className="image" alt="photoImage" style={{ top: `${index * 261.34}px` }} key={index} src={p} />
+				<img className="image" alt="photoImage" style={{ top: `${index * 202.34}px` }} key={index} src={p} />
 			
 			);
 		});

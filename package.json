@@ -7,6 +7,7 @@
     "axios": "^0.18.0",
     "base64-img": "^1.0.4",
     "browserify": "^16.2.3",
+    "file-saver": "^2.0.0",
     "html2canvas": "^1.0.0-alpha.12",
     "masonry-layout": "^4.2.2",
     "materialize-css": "^1.0.0-rc.2",
@@ -22,8 +23,7 @@
     "redux-actions": "^2.6.4",
     "redux-devtools-extension": "^2.13.7",
     "redux-thunk": "^2.3.0",
-    "semantic-ui-react": "^0.84.0",
-    "sweetalert": "^2.1.2"
+    "semantic-ui-react": "^0.84.0"
   },
   "scripts": {
     "start": "react-scripts start",

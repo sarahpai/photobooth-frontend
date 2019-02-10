@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import withAuth from './withAuth';
 import { fetchAllPhotos } from '../actions/gallery';
 import '../css/gallery.css'
+import { saveAs } from 'file-saver';
 class Gallery extends React.Component {
 
 
@@ -12,10 +13,12 @@ class Gallery extends React.Component {
 
 
 	renderOneImage = () => {
+		
 		return this.props.photos.map(image => {
 			debugger
-			return <div className="image-container">
-				<img alt="gallery" src={image} style={{width: 960}}/>
+			return <div key={image.id} className="image-container">
+				<img alt="gallery" src={image} style={{ width: 960 }} />
+				
 				<a className="waves-effect waves-light btn black" id="btn-download" href="" onClick={()=>this.downloadImage(image)} ><i class="material-icons left">cloud</i>Download</a>
 			</div>
 		});
@@ -24,43 +27,38 @@ class Gallery extends React.Component {
 
 
 	downloadImage = (image) => {
-		console.log("download image clicked", image);
-		var link = document.createElement('a');
+		// console.log("download image clicked", image);
+		var a = document.createElement('a');
+		a.href = image;
+		a.download = "output.png";
+		document.body.appendChild(a);
+		a.click();
 		debugger
-		if (typeof link.download === 'string') {
-			link.href = image
-			link.download = image
-			document.body.appendChild(link)
-			link.click();
-			document.body.removeChild(link);
-		} else {
-			window.open(image)
-		}
+		document.body.removeChild(a);
+		
+		// return blob;
+
+
+		// const url = window.URL.createObjectURL(new Blob([image], {type: 'image/png'}));
+		// const link = document.createElement('a');
+		// link.href = url;
+		// link.setAttribute('download', 'image.png');
+		// document.body.appendChild(link);
+		
 	};
 
 
 
 
 	render() {
-		console.log("sarah!", this.props);
+		console.log("props inside gallery are ", this.props);
 
 		return (
-			<>
-				{/* <div className="grid">
-					<div className="grid-sizer">
-						<div className="grid-item grid-item--width2">
-						
-						
-						</div>
-					
-					</div>
-
-			</div> */}
-					
-			<a className="waves-effect waves-light btn black" href="/homepage"><i class="material-icons left">cloud</i>Homepage</a>
+			<>	
+			<a className="waves-effect waves-light btn black" href="/homepage"><i className="material-icons left">cloud</i>Homepage</a>
 			{this.renderOneImage()}
-			
-		</>);
+			</>
+		);
 	}
 }
 

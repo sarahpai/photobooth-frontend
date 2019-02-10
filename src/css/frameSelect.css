@@ -16,18 +16,20 @@ h2 {
   overflow: hidden;
 	background: url('../images/gallery-background.png') center center no-repeat;
   background-size: cover;
-	min-height: 1080px;;
-	max-width: 1920px;
+	width: 100%;
+	min-height: 100vh;
 }	
 
 .grid {
 	 display: grid;
-	 height: 200px;
-	 grid-template: repeat(4, 1fr) / repeat(4, 1fr);
-	 gap: 100px 200px;
-	 margin-top: 100px;
-	 margin-left: 220px;
-	 margin-right: 30px;
+	 /* height: 200px; */
+	 grid-template-columns: repeat(4, 1fr);
+	 /* grid-template: repeat(4, 1fr) / repeat(4, 1fr);*/
+	 gap: 100px 200px; 
+	 margin: 0 auto;
+	 /* top: 30%;
+	 left: 1%;
+	 right: 0%; */
 	 position: absolute;
   }
   
@@ -35,12 +37,19 @@ h2 {
 	border: 4px solid black;
 	background: rgba(0,0,0,0.1);
 	box-shadow: 0 30px 20px 0 rgba(0, 0, 0, .5), 0 6px 20px 0 rgba(0, 0, 0, .5);
+	width: 100%;
+  height: 100%;
+	object-fit: cover;
   }
  
 
  .grid-item img{
-	max-width: 200px;
-	max-height: 150px;
+	/* display: block; */
+  width: 100%;
+  height: 100%;
+	object-fit: cover;
+	/* max-width: 200px;
+	max-height: 150px; */
  }
 
 
@@ -48,9 +57,8 @@ h2 {
 	border-color: white;
 	background: rgb(206, 188, 211);
 	cursor: pointer;
-	
   }
 
   .grid-item {
-	max-height: 121px;
+	/* max-height: 121px; */
   }

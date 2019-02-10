@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Redirect } from 'react-router';
 import { loginUser } from '../actions/users';
-// import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 import '../css/loginForm.css'
 import 'materialize-css'
 import 'materialize-css/dist/css/materialize.min.css';
