@@ -12,14 +12,14 @@ class Gallery extends React.Component {
 	}
 
 
-	renderOneImage = () => {
+	renderOneImage = (images) => {
 		
-		return this.props.photos.map(image => {
+		return images.map(image => {
 			debugger
 			return <div key={image.id} className="image-container">
-				<img alt="gallery" src={image} style={{ width: 960 }} />
+				<img alt="gallery" src={image.photo} style={{ width: 960 }} />
 				
-				<a className="waves-effect waves-light btn black" id="btn-download" href="" onClick={()=>this.downloadImage(image)} ><i class="material-icons left">cloud</i>Download</a>
+				<a className="waves-effect waves-light btn black" download={`output-${image.id}.png`} id="btn-download" href={image.photo} ><i class="material-icons left">cloud</i>Download</a>
 			</div>
 		});
 		
@@ -56,7 +56,7 @@ class Gallery extends React.Component {
 		return (
 			<>	
 			<a className="waves-effect waves-light btn black" href="/homepage"><i className="material-icons left">cloud</i>Homepage</a>
-			{this.renderOneImage()}
+			{this.renderOneImage(this.props.images)}
 			</>
 		);
 	}
